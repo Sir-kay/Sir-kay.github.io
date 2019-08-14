@@ -47,9 +47,33 @@ const ap = new APlayer({
       },
       {
         name: "Sky",
-        artist: 'Sia, Alan Walker',
+        artist: 'Alan Walker',
         url: 'http://fs.ios.kugou.com/201908141446/34205d49efb8d00c0c629c0f14be4f3e/G108/M00/1A/11/rA0DAFk_EnqAFI2KAHwwxlxhQl8924.mp3',
         cover: 'http://imge.kugou.com/stdmusic/240/20170613/20170613062023344138.jpg',
+      },
+      {
+        name: "Darkside",
+        artist: 'Alan Walker',
+        url: 'http://fs.ios.kugou.com/201908141456/9050b8b722798cd8bc3c860116ee08f8/G133/M00/09/03/xQ0DAFtZ6huAIAVVADO-IdwEQgo093.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20180726/20180726223034633026.jpg',
+      },
+      {
+        name: "Diamond Heart",
+        artist: 'Alan Walker',
+        url: 'http://fs.ios.kugou.com/201908141458/e66faa7c108196a96ec6294d3c08e4d2/G093/M01/04/1F/PZQEAFusjwOAY5YXADqSvgae77s410.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20180927/20180927160215604448.jpg',
+      },
+      {
+        name: "Spectre",
+        artist: 'Alan Walker',
+        url: 'http://fs.ios.kugou.com/201908141459/108fc527da6f7cf66e53f942f2d0659e/G099/M03/1A/09/Q5QEAFvO_JiAbw8uADhXmh1LK4M676.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20150720/20150720143238297086.jpg',
+      },
+      {
+        name: "The Spectre",
+        artist: 'Alan Walker',
+        url: 'http://fs.ios.kugou.com/201908141500/57b7f4245074b48c4e3a5a6ed515de10/G111/M00/0D/11/rw0DAFm6mGSABCe6AC9TMn7VzHk537.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20170914/20170914225307625638.jpg',
       }
     ]
 });
