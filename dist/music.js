@@ -68,12 +68,6 @@ const ap = new APlayer({
         artist: 'Alan Walker',
         url: 'http://fs.open.kugou.com/a12f8083901ff388d963b9001207332e/5d551c2a/G111/M00/0D/11/rw0DAFm6mGSABCe6AC9TMn7VzHk537.mp3',
         cover: 'http://imge.kugou.com/stdmusic/240/20170914/20170914225307625638.jpg',
-      },
-      {
-        name: "Move Your Body (Alan Walker Remix)",
-        artist: 'Sia,Alan Walker',
-        url: 'http://m10.music.126.net/20190815171306/468ed603970382ba192e321c2b7a7cd2/ymusic/68d5/2e42/5756/726bfb2f3e0b9c1b8dd1229c5c30cad2.mp3',
-        cover: 'http://imge.kugou.com/stdmusic/240/20170914/20170914225307625638.jpg',
       }
     ]
 });
