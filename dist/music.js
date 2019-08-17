@@ -18,7 +18,7 @@ const ap = new APlayer({
       {
         name: "Alone",
         artist: 'Alan Walker',
-        url: 'http://www.ytmp3.cn/down/50557.mp3'
+        url: 'http://www.ytmp3.cn/down/50557.mp3',
         cover: 'http://imge.kugou.com/stdmusic/240/20161201/20161201225413538833.jpg',
       },
       {
