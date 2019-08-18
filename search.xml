@@ -74,8 +74,8 @@
     <content type="text"><![CDATA[2019 Multi-University Training Contest 2: 1010 Just Skip The Problem 自闭记题意多测。每次给你一个数$n$，你可以同时问无数次，每次问的是一个数$y_i$，你会得到的回答是$x\&amp;y_i$是否为$y_i$，问你问的最少的次数的种数$\%1e6+3$，可以调换顺序。 10min 得出数学方法求$n!\%1e6+3$。 50min 自闭 5min 写出裸暴力，优化10min，交一发TLE 30min 网上找各种快速阶乘题解、优化，发现板子全是错的：$3!$打出$60$、不会清空$\dots\dots$，写到自闭 5min 发现一旦$n\ge1e6+3$时取了模后就为$0$了$\dots\dots$，自闭 2min AC直接码，2min AC$\dots\dots$ 总结：以后多多总结性质。]]></content>
       <categories>
         <category>算法</category>
-        <category>多校</category>
         <category>hdu</category>
+        <category>多校</category>
       </categories>
       <tags>
         <tag>数学</tag>

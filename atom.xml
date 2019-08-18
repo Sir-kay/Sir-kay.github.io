@@ -164,7 +164,7 @@
     <link href="http://yoursite.com/2019/08/18/2019-Multi-University-Training-Contest-2-1010-Just-Skip-The-Problem-%E8%87%AA%E9%97%AD%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/08/18/2019-Multi-University-Training-Contest-2-1010-Just-Skip-The-Problem-自闭记/</id>
     <published>2019-08-18T07:39:09.000Z</published>
-    <updated>2019-08-18T07:57:14.340Z</updated>
+    <updated>2019-08-18T08:05:19.739Z</updated>
     
     <content type="html"><![CDATA[<h2 id="2019-Multi-University-Training-Contest-2-1010-Just-Skip-The-Problem-自闭记"><a href="#2019-Multi-University-Training-Contest-2-1010-Just-Skip-The-Problem-自闭记" class="headerlink" title="2019 Multi-University Training Contest 2: 1010 Just Skip The Problem 自闭记"></a>2019 Multi-University Training Contest 2: 1010 Just Skip The Problem 自闭记</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>多测。每次给你一个数$n$，你可以同时问无数次，每次问的是一个数$y_i$，你会得到的回答是$x\&amp;y_i$是否为$y_i$，问你问的最少的次数的种数$\%1e6+3$，可以调换顺序。</p><a id="more"></a><h3 id="10min-得出数学方法"><a href="#10min-得出数学方法" class="headerlink" title="10min 得出数学方法"></a>10min 得出数学方法</h3><p>求$n!\%1e6+3$。</p><h3 id="50min-自闭"><a href="#50min-自闭" class="headerlink" title="50min 自闭"></a>50min 自闭</h3><ul><li>5min 写出裸暴力，优化10min，交一发TLE</li><li>30min 网上找各种快速阶乘题解、优化，发现板子全是错的：$3!$打出$60$、不会清空$\dots\dots$，写到自闭</li><li>5min 发现一旦$n\ge1e6+3$时取了模后就为$0$了$\dots\dots$，自闭</li></ul><h3 id="2min-AC"><a href="#2min-AC" class="headerlink" title="2min AC"></a>2min AC</h3><p>直接码，2min AC$\dots\dots$</p><h3 id="总结：以后多多总结性质。"><a href="#总结：以后多多总结性质。" class="headerlink" title="总结：以后多多总结性质。"></a>总结：以后多多总结性质。</h3>]]></content>
     
@@ -176,9 +176,9 @@
     
       <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="多校" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/%E5%A4%9A%E6%A0%A1/"/>
+      <category term="hdu" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/hdu/"/>
     
-      <category term="hdu" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/%E5%A4%9A%E6%A0%A1/hdu/"/>
+      <category term="多校" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/hdu/%E5%A4%9A%E6%A0%A1/"/>
     
     
       <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
