@@ -60,8 +60,44 @@ const ap = new APlayer({
       {
         name: "The Spectre",
         artist: 'Alan Walker',
-        url: 'http://www.ytmp3.cn/down/43954.mp3',
+        url: 'http://www.ytmp3.cn/down/43909.mp3',
         cover: 'http://imge.kugou.com/stdmusic/240/20170914/20170914225307625638.jpg',
+      },
+      {
+        name: "Counting Stars",
+        artist: 'OneRepublic',
+        url: 'http://www.ytmp3.cn/down/32553.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20160908/20160908123742484664.jpg',
+      },
+      {
+        name: "Unity",
+        artist: 'TheFatRat',
+        url: 'http://www.ytmp3.cn/down/34987.mp3',
+        cover: 'https://imgessl.kugou.com/uploadpic/softhead/400/20160908/20160908150111742.jpg',
+      },
+      {
+        name: "Journey",
+        artist: 'Capo Productions',
+        url: 'http://www.ytmp3.cn/down/51593.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20160908/20160908005500924541.jpg',
+      },
+      {
+        name: "Force",
+        artist: 'Alan Walker',
+        url: 'http://www.ytmp3.cn/down/55285.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20150720/20150720200727676536.jpg',
+      },
+      {
+        name: "Sing Me To Sleep",
+        artist: 'Alan Walker,Iselin Solheim',
+        url: 'http://www.ytmp3.cn/down/50316.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20160603/20160603103443561463.jpg',
+      },
+      {
+        name: "Fade",
+        artist: 'Alan Walker',
+        url: 'http://www.ytmp3.cn/down/50556.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20150718/20150718110506779418.jpg',
       }
     ]
 });
