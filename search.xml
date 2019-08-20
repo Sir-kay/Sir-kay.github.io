@@ -35,8 +35,8 @@
         <category>Ural</category>
       </categories>
       <tags>
-        <tag>记忆化搜索</tag>
         <tag>DP</tag>
+        <tag>记忆化搜索</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -62,9 +62,9 @@
         <category>Codeforces</category>
       </categories>
       <tags>
+        <tag>数学</tag>
         <tag>模拟</tag>
         <tag>DP</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -90,8 +90,8 @@
         <category>Ural</category>
       </categories>
       <tags>
-        <tag>记忆化搜索</tag>
         <tag>DP</tag>
+        <tag>记忆化搜索</tag>
         <tag>算法</tag>
         <tag>Ural</tag>
         <tag>最短路</tag>
