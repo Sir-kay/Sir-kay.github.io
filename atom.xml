@@ -122,9 +122,9 @@
       <category term="Ural" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Ural/"/>
     
     
-      <category term="暴力" scheme="http://yoursite.com/tags/%E6%9A%B4%E5%8A%9B/"/>
-    
       <category term="模拟" scheme="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+      <category term="暴力" scheme="http://yoursite.com/tags/%E6%9A%B4%E5%8A%9B/"/>
     
   </entry>
   
