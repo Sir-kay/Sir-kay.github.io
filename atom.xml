@@ -285,16 +285,13 @@
     <link href="http://yoursite.com/2019/08/12/hello-world/"/>
     <id>http://yoursite.com/2019/08/12/hello-world/</id>
     <published>2019-08-12T02:11:39.689Z</published>
-    <updated>2019-08-20T09:09:25.495Z</updated>
+    <updated>2019-08-29T07:03:38.667Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Let’s-Code"><a href="#Let’s-Code" class="headerlink" title="Let’s Code"></a>Let’s Code</h1><p><strong>Happy Coding, Happy OI</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Happy Coding, Happy OI!"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">\LaTeX</script>]]></content>
+    <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><p><strong>Happy Coding, Happy OI</strong></p><a id="more"></a><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Happy Coding, Happy OI!"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">\LaTeX</script>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Let’s-Code&quot;&gt;&lt;a href=&quot;#Let’s-Code&quot; class=&quot;headerlink&quot; title=&quot;Let’s Code&quot;&gt;&lt;/a&gt;Let’s Code&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Happy Coding, Happy OI&lt;/strong
-      
+      &lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Happy Coding, Happy OI&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
