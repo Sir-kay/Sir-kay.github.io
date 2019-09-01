@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="agc029C Lexicographic constraints 题解题意 有$n$个字符串，分别为$S_1,S_2,\dots,S_n$，$S_i$的长度为$A_i(1\le i\le n)$。给定$n$和$A$，求用最少个数的字符组成$S_1,S_2,\dots,S_n$，使得$S_1&amp;lt;S_2&amp;lt;\dots&amp;lt;S_n$(字典序)。输出这个数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T13:20:10.781Z">
+<meta property="og:updated_time" content="2019-09-01T13:31:55.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="agc029C Lexicographic constraints 题解">
 <meta name="twitter:description" content="agc029C Lexicographic constraints 题解题意 有$n$个字符串，分别为$S_1,S_2,\dots,S_n$，$S_i$的长度为$A_i(1\le i\le n)$。给定$n$和$A$，求用最少个数的字符组成$S_1,S_2,\dots,S_n$，使得$S_1&amp;lt;S_2&amp;lt;\dots&amp;lt;S_n$(字典序)。输出这个数。">
@@ -297,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-01 21:20:10" itemprop="dateModified" datetime="2019-09-01T21:20:10+08:00">2019-09-01</time>
+                <time title="修改时间：2019-09-01 21:31:55" itemprop="dateModified" datetime="2019-09-01T21:31:55+08:00">2019-09-01</time>
               </span>
             
           
@@ -369,7 +369,7 @@ S_i=S_{i-1}+\begin{matrix} \underbrace{0\dots0} \\ A_i-A_{i-1}\end{matrix}</scri
 </ul>
 <p>这里需要知道字符集大小。考虑二分，因为字符集大小是满足单调性的。<code>check</code>函数：“进位”时如果进到$-1$位了，就不可行。</p>
 <p><u>证明：如果字符集大小位$m$，则字符集大小为$m+1$一定可行，而字符集大小为$m-1$不一定可行。</u></p>
-<p>问题：字符串长度最大为$10^9$，不能维护整个字符串。</p>
+<p><strong>问题：字符串长度最大为$10^9$，不能维护整个字符串。</strong></p>
 <p>解法$1$：用一个<code>map&lt;int,int&gt;</code>表示第几位放的是什么字符。观察发现：字符串中大部分的字符为$0$，所以只维护字符不为$0$位就可以了。</p>
 <p>Tip: 需要特判$A_1&lt;A_2&lt;\dots&lt;A_n$的情况，否则前$3$个点会<code>TLE</code>。</p>
 <p>解法$2$：同样，字符串中大部分的字符为$0$，可以用一个<code>vector&lt;pair&lt;int,int&gt; &gt;</code>维护，<code>&lt;a,b&gt;</code>表示字符为<code>a</code>，出现了<code>b</code>次的字符串，存在<code>vector</code>里即可表达整个字符串。<code>check</code>函数思路与解法$1$一样，但是会更麻烦一点。</p>
