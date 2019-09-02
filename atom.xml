@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-02T13:54:51.095Z</updated>
+  <updated>2019-09-02T13:55:32.187Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客建议</title>
-    <link href="http://yoursite.com/2019/09/02/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%AE/"/>
-    <id>http://yoursite.com/2019/09/02/博客建议/</id>
+    <title>博客意见</title>
+    <link href="http://yoursite.com/2019/09/02/%E5%8D%9A%E5%AE%A2%E6%84%8F%E8%A7%81/"/>
+    <id>http://yoursite.com/2019/09/02/博客意见/</id>
     <published>2019-09-02T13:53:30.000Z</published>
-    <updated>2019-09-02T13:54:51.095Z</updated>
+    <updated>2019-09-02T13:55:32.187Z</updated>
     
     <content type="html"><![CDATA[<p><strong>关于本博客的任何意见可以在次贴评论，谢谢阅读。</strong></p>]]></content>
     
