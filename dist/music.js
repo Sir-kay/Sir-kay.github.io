@@ -109,7 +109,7 @@ const ap = new APlayer({
         name: "盗将行",
         artist: '花粥,马雨阳',
         url: 'http://www.ytmp3.cn/down/49827.mp3',
-        cover: 'http://imge.kugou.com/stdmusic/240/20190114/20190114202321451489.jpg',
+        cover: 'http://imge.kugou.com/stdmusic/240/20180918/20180918153806107005.jpg',
       }
     ]
 });
