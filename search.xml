@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Codeforces 309B Context Advertising 题解]]></title>
+    <url>%2F2019%2F09%2F08%2FCodeforces-309B-Context-Advertising-%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[Codeforces 309B Context Advertising 题解题意给定$n,r,c$和一个由$n$个单词组成的句子(两两单词之间有一个空格)，在这个句子里选出若干个连续的单词，组成一个“矩阵”，行数不能超过$r$，每行字符数不能超过$c$(包括空格)，不能把一个单词拆开。求合法矩阵中，单词数最多的那个矩阵，并输出。 题解题目要求组成一个$r\times c$的矩阵。 先考虑每行字符数的这个条件。设这个句子为$s_0,s_1,\dots,s_{n-1}$，对于一个单词$i(0\le i&lt; n)$，找出一个最大的$j(i]]></content>
+      <categories>
+        <category>算法</category>
+        <category>Codeforces</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+        <tag>二分</tag>
+        <tag>倍增</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ural 1220 Stacks 题解]]></title>
     <url>%2F2019%2F09%2F07%2FUral-1220-Stacks-%E9%A2%98%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[Ural 1220 Stacks 题解题意模拟若干个栈。 给定$n(1\le n\le 10^5)$个操作，每个操作有如下两个类型 PUSH a b，意为把b插入第a个栈中。 POP a，意为输出第a个栈的栈顶元素，并弹出栈顶。 $1\le a \le 10^3,0\le b\le 10^9$，保证操作无误，内存限制为0.75MB=768KB​。 题解纯模拟会MLE(不知道有没有神仙可以卡过去)，不管是vector，stack还是其它的。 很容易想到用静态链表$v$维护，把所有的元素存储在同一个数组： $v_i$有一个指针$p_i$指向这个栈中前一个元素。 每个栈有$l_i$表示栈顶元素的下标。 但是这样仍然会MLE。 把$p$数组的类型换成unsigned short($[0,65536]$)，观察到$0\le v_i$。 若$p_i&gt;65536$，让$v_i=-v_i$，$p_i=p_i-65536$。 执行POP操作时转换一下即可。 Tip: G++ 7.1还是MLE(796KB)，选用Visual C++ 2017可以通过(760KB)。 程序1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;stdio.h&gt;#include &lt;math.h&gt;using namespace std;const int maxn=100001,maxm=1001,maxnum=65536;int n,a,b,v[maxn],len,lst[maxm];unsigned short poi[maxn];char op[5];int main()&#123; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++) &#123; scanf("%s%d",op,&amp;a); if(op[1]=='U') &#123; scanf("%d",&amp;b); v[len++]=b; int id=len-1; if(lst[a]&gt;maxnum) &#123; poi[id]=lst[a]-maxnum; v[id]=-v[id]; &#125; else poi[id]=lst[a]; lst[a]=id; &#125; else &#123; printf("%d\n",abs(v[lst[a]])); if(v[lst[a]]&lt;0) lst[a]=poi[lst[a]]+maxnum; else lst[a]=poi[lst[a]]; &#125; &#125; return 0;&#125;]]></content>
@@ -59,9 +74,9 @@
         <category>AtCoder</category>
       </categories>
       <tags>
+        <tag>二分</tag>
         <tag>模拟</tag>
         <tag>贪心</tag>
-        <tag>二分</tag>
       </tags>
   </entry>
   <entry>
@@ -140,8 +155,8 @@
         <category>Codeforces</category>
       </categories>
       <tags>
-        <tag>模拟</tag>
         <tag>DP</tag>
+        <tag>模拟</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
       </tags>
