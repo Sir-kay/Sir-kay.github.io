@@ -91,7 +91,7 @@ const ap = new APlayer({
         name: "Unity",
         artist: 'TheFatRat',
         url: 'http://www.ytmp3.cn/down/34987.mp3',
-        cover: 'https://imgessl.kugou.com/uploadpic/softhead/400/20160908/20160908150111742.jpg',
+        cover: 'http://p2.music.126.net/GeKPZsDFaMEUx_pQK6PJyA==/6647647302424277.jpg?param=130y130',
       },
       {
         name: "Journey",
@@ -109,7 +109,13 @@ const ap = new APlayer({
         name: "盗将行",
         artist: '花粥,马雨阳',
         url: 'http://www.ytmp3.cn/down/49827.mp3',
-        cover: 'http://imge.kugou.com/stdmusic/240/20180918/20180918153806107005.jpg',
+        cover: 'http://p1.music.126.net/-qHPT3rhxDlu5zQV9NcQ-A==/109951163555860423.jpg?param=130y130',
+      },
+      {
+        name: "出山",
+        artist: '花粥,王胜男',
+        url: 'http://www.ytmp3.cn/down/57880.mp3',
+        cover: 'http://p1.music.126.net/xUAfdMHdXhu3BmO4g8nOYA==/109951163573311341.jpg?param=130y130',
       }
     ]
 });
