@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Codeforce 1119D Frets On Fire 题解题意给定$n$和$s_1,s_2,\dots,s_n$，由此得到一个$n\times(10^{18}+1)$的矩阵$f$，其中$f_{i,j}=s_i+j (1\le i\le n,0\le j\le 10^{18})$。 在样例$1$中，给定$n=6,s=[3,1,4,1,5,9]$，得到  \begin{matrix}  \tex">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-15T03:11:16.866Z">
+<meta property="og:updated_time" content="2019-09-15T03:17:35.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforce 1119D Frets On Fire 题解">
 <meta name="twitter:description" content="Codeforce 1119D Frets On Fire 题解题意给定$n$和$s_1,s_2,\dots,s_n$，由此得到一个$n\times(10^{18}+1)$的矩阵$f$，其中$f_{i,j}=s_i+j (1\le i\le n,0\le j\le 10^{18})$。 在样例$1$中，给定$n=6,s=[3,1,4,1,5,9]$，得到  \begin{matrix}  \tex">
@@ -297,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-15 11:11:16" itemprop="dateModified" datetime="2019-09-15T11:11:16+08:00">2019-09-15</time>
+                <time title="修改时间：2019-09-15 11:17:35" itemprop="dateModified" datetime="2019-09-15T11:17:35+08:00">2019-09-15</time>
               </span>
             
           
@@ -383,12 +383,12 @@ s_6: & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & \dots
 <p>考虑当每一行对于整个矩阵的贡献。</p>
 <p>对于样例$1$：</p>
 <ul>
-<li><u>第$1$行贡献了$0$个数$\{\varnothing\}$；</u></li>
+<li>第$1$行贡献了$0$个数$\{\varnothing\}$；</li>
 <li>第$2$行贡献了$2$个数$\{1,2\}$；</li>
 <li>第$3$行贡献了$1$个数$\{3\}$；</li>
 <li>第$4$行贡献了$1$个数$\{4\}$；</li>
 <li>第$5$行贡献了$4$个数$\{5,6,7,8\}$；</li>
-<li><u>第$6$行没有贡献。</u></li>
+<li>第$6$行没有贡献。</li>
 </ul>
 <p>很容易发现，第$i$行的贡献为$s_{i+1}-s_i$。</p>
 <p>对于任意区间$[0,r]$，第$i$行的贡献即为$\min\{s_{i+1}-s_i,w\}$。</p>
