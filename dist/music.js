@@ -64,6 +64,12 @@ const ap = new APlayer({
         cover: 'http://imge.kugou.com/stdmusic/240/20160603/20160603103443561463.jpg',
       },
       {
+        name: "Hymn For The Weekend(Remix)",
+        artist: 'Alan Walker',
+        url: 'http://www.ytmp3.cn/down/36836.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20160703/20160703175307543441.jpg',
+      },
+      {
         name: "Alone",
         artist: 'Alan Walker',
         url: 'http://www.ytmp3.cn/down/50557.mp3',
