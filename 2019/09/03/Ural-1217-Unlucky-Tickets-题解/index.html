@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Ural 1217 Unlucky Tickets 题解题意给定$n(2\le n\le 20)$($n$是偶数)，求出在所有$n$位数中(可以有前导零)，前一半数码的和 与 后一半数码的和相等或在奇数位上的数码的和 与 在偶数位上的数码和相等 的个数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-14T14:11:52.525Z">
+<meta property="og:updated_time" content="2019-09-22T03:06:18.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ural 1217 Unlucky Tickets 题解">
 <meta name="twitter:description" content="Ural 1217 Unlucky Tickets 题解题意给定$n(2\le n\le 20)$($n$是偶数)，求出在所有$n$位数中(可以有前导零)，前一半数码的和 与 后一半数码的和相等或在奇数位上的数码的和 与 在偶数位上的数码和相等 的个数。">
@@ -297,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-14 22:11:52" itemprop="dateModified" datetime="2019-09-14T22:11:52+08:00">2019-09-14</time>
+                <time title="修改时间：2019-09-22 11:06:18" itemprop="dateModified" datetime="2019-09-22T11:06:18+08:00">2019-09-22</time>
               </span>
             
           
@@ -354,7 +354,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Ural-1217-Unlucky-Tickets-题解"><a href="#Ural-1217-Unlucky-Tickets-题解" class="headerlink" title="Ural 1217 Unlucky Tickets 题解"></a>Ural 1217 Unlucky Tickets 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定$n(2\le n\le 20)$($n$是偶数)，求出在所有$n$位数中(可以有前导零)，前一半数码的和 与 后一半数码的和相等<strong>或</strong>在奇数位上的数码的和 与 在偶数位上的数码和相等 的个数。</p>
+        <h2 id="Ural-1217-Unlucky-Tickets-题解"><a href="#Ural-1217-Unlucky-Tickets-题解" class="headerlink" title="Ural 1217 Unlucky Tickets 题解"></a><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1217" target="_blank" rel="noopener">Ural 1217 Unlucky Tickets</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定$n(2\le n\le 20)$($n$是偶数)，求出在所有$n$位数中(可以有前导零)，前一半数码的和 与 后一半数码的和相等<strong>或</strong>在奇数位上的数码的和 与 在偶数位上的数码和相等 的个数。</p>
 <a id="more"></a>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>考虑DP。</p>
 <p>$f(i,j,k)$表示在前$i$位，前一半数码的和 减去 后一半数码的和的为$j$，在奇数位上的数码的和 减去 在偶数位上的数码和为$k$ 的个数。</p>
