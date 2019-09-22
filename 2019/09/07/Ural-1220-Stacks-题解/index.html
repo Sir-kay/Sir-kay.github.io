@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Ural 1220 Stacks 题解题意模拟若干个栈。 给定$n(1\le n\le 10^5)$个操作，每个操作有如下两个类型  PUSH a b，意为把b插入第a个栈中。 POP a，意为输出第a个栈的栈顶元素，并弹出栈顶。  $1\le a \le 10^3,0\le b\le 10^9$，保证操作无误，内存限制为0.75MB=768KB​。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-07T03:15:00.294Z">
+<meta property="og:updated_time" content="2019-09-22T03:03:05.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ural 1220 Stacks 题解">
 <meta name="twitter:description" content="Ural 1220 Stacks 题解题意模拟若干个栈。 给定$n(1\le n\le 10^5)$个操作，每个操作有如下两个类型  PUSH a b，意为把b插入第a个栈中。 POP a，意为输出第a个栈的栈顶元素，并弹出栈顶。  $1\le a \le 10^3,0\le b\le 10^9$，保证操作无误，内存限制为0.75MB=768KB​。">
@@ -286,11 +286,19 @@
                 
               
 
-              <time title="创建时间：2019-09-07 10:39:09 / 修改时间：11:15:00" itemprop="dateCreated datePublished" datetime="2019-09-07T10:39:09+08:00">2019-09-07</time>
+              <time title="创建时间：2019-09-07 10:39:09" itemprop="dateCreated datePublished" datetime="2019-09-07T10:39:09+08:00">2019-09-07</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-22 11:03:05" itemprop="dateModified" datetime="2019-09-22T11:03:05+08:00">2019-09-22</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -354,7 +362,7 @@
 </ul>
 <p>$1\le a \le 10^3,0\le b\le 10^9$，保证操作无误，内存限制为<code>0.75MB=768KB​</code>。</p>
 <a id="more"></a>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>纯模拟会<code>MLE</code>(不知道有没有神仙可以卡过去)，不管是<code>vector</code>，<code>stack</code>还是其它的。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>纯模拟会<code>MLE</code>(不知道有没有神仙可以卡过去)，不管是<code>vector</code>，<code>stack</code>还是其它的。</p>
 <p>很容易想到用静态链表$v$维护，把所有的元素存储在同一个数组：</p>
 <ul>
 <li>$v_i$有一个指针$p_i$指向这个栈中前一个元素。</li>
@@ -646,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ural-1220-Stacks-题解"><span class="nav-number">1.</span> <span class="nav-text">Ural 1220 Stacks 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.1.</span> <span class="nav-text">题意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序"><span class="nav-number">2.1.</span> <span class="nav-text">程序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ural-1220-Stacks-题解"><span class="nav-number">1.</span> <span class="nav-text">Ural 1220 Stacks 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序"><span class="nav-number">1.3.</span> <span class="nav-text">程序</span></a></li></ol></li></ol></div>
             
 
           </div>
