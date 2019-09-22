@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Codeforces 609F Frogs and mosquitoes 题解题意有$n (1\le n\le 2\cdot10^5)$个青蛙固定在平面直角坐标系中$Ox$的非负半轴上，对于第$i (1\le i\le n)$个青蛙有两个值，分别是$x_i$和$t_i (0\le x_i,t_i\le 10^9)$($x_i$两两不同)，$x_i$代表它的位置，$t_i$代表它的舌头的长度。 有$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-21T15:25:11.292Z">
+<meta property="og:updated_time" content="2019-09-22T02:15:43.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 609F Frogs and mosquitoes 题解">
 <meta name="twitter:description" content="Codeforces 609F Frogs and mosquitoes 题解题意有$n (1\le n\le 2\cdot10^5)$个青蛙固定在平面直角坐标系中$Ox$的非负半轴上，对于第$i (1\le i\le n)$个青蛙有两个值，分别是$x_i$和$t_i (0\le x_i,t_i\le 10^9)$($x_i$两两不同)，$x_i$代表它的位置，$t_i$代表它的舌头的长度。 有$">
@@ -286,11 +286,19 @@
                 
               
 
-              <time title="创建时间：2019-09-21 22:42:56 / 修改时间：23:25:11" itemprop="dateCreated datePublished" datetime="2019-09-21T22:42:56+08:00">2019-09-21</time>
+              <time title="创建时间：2019-09-21 22:42:56" itemprop="dateCreated datePublished" datetime="2019-09-21T22:42:56+08:00">2019-09-21</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-22 10:15:43" itemprop="dateModified" datetime="2019-09-22T10:15:43+08:00">2019-09-22</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -347,7 +355,7 @@
 
       
         <h2 id="Codeforces-609F-Frogs-and-mosquitoes-题解"><a href="#Codeforces-609F-Frogs-and-mosquitoes-题解" class="headerlink" title="Codeforces 609F Frogs and mosquitoes 题解"></a><a href="http://codeforces.com/contest/609/problem/F" target="_blank" rel="noopener">Codeforces 609F Frogs and mosquitoes</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有$n (1\le n\le 2\cdot10^5)$个青蛙固定在平面直角坐标系中$Ox$的非负半轴上，对于第$i (1\le i\le n)$个青蛙有两个值，分别是$x_i$和$t_i (0\le x_i,t_i\le 10^9)$($x_i$两两不同)，$x_i$代表它的位置，$t_i$代表它的舌头的长度。</p>
-<p>有$m (1\le m\le 2\cdot10^5)$只蚊子也固定在$Ox$的非负半轴上，对于第$i (1\le i\le m)$只蚊子有两个值，分别是$p_i$和$b_i (0\le p_i,b_i\le 10^9)$，$p_i$代表它的位置，$t_i$代表它的大小。</p>
+<p>有$m (1\le m\le 2\cdot10^5)$只蚊子也固定在$Ox$的非负半轴上，对于第$i (1\le i\le m)$只蚊子有两个值，分别是$p_i$和$b_i (0\le p_i,b_i\le 10^9)$，$p_i$代表它的位置，$b_i$代表它的大小。</p>
 <p>如果一个青蛙$i$和一只蚊子$j$，满足 $p_j$在区间$[x_i,x_i+t_i]$内，那么青蛙$i$就可以吃掉蚊子$j$，并且<strong>舌头会增长$b_j$</strong>。<strong>如果有多个青蛙可以吃掉同一个蚊子，那么这个蚊子会被$x_i$最小的那个青蛙吃掉。</strong></p>
 <p><strong>蚊子是按照输入的顺序降临的，如果第$i$个蚊子要降临，必须满足 青蛙吃光了<u>可能吃掉</u>的所有蚊子$j (1\le j&lt;i)$。</strong></p>
 <p>问第$i$只青蛙吃掉了多少蚊子和最后它的舌头有多长。</p>
