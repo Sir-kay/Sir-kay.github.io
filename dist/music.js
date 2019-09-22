@@ -106,6 +106,12 @@ const ap = new APlayer({
         cover: 'http://imge.kugou.com/stdmusic/240/20160908/20160908005500924541.jpg',
       },
       {
+        name: "HandClap",
+        artist: 'fitz & the tantrums',
+        url: 'http://www.ytmp3.cn/down/52168.mp3',
+        cover: 'http://imge.kugou.com/stdmusic/240/20190114/20190114202321451489.jpg',
+      },
+      {
         name: "盗将行",
         artist: '花粥,马雨阳',
         url: 'http://www.ytmp3.cn/down/49827.mp3',
