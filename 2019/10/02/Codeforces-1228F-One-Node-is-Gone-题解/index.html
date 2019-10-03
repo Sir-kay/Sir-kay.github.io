@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Codeforces 1228F One Node is Gone 题解题意给定$n (1\le n\le17)$，定义McDic’s generation为  建一个有$2^n-1$个结点的满二叉树 从这个二叉树中选择一个非根结点$v$ 把$v$从树中删除，从$v$的父亲到$v$的儿子连边，如果$v$没有儿子，那么就不连边。  现在给定一棵树，判断这棵树是否可以经过McDic’s generat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-02T14:02:11.741Z">
+<meta property="og:updated_time" content="2019-10-03T02:30:25.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 1228F One Node is Gone 题解">
 <meta name="twitter:description" content="Codeforces 1228F One Node is Gone 题解题意给定$n (1\le n\le17)$，定义McDic’s generation为  建一个有$2^n-1$个结点的满二叉树 从这个二叉树中选择一个非根结点$v$ 把$v$从树中删除，从$v$的父亲到$v$的儿子连边，如果$v$没有儿子，那么就不连边。  现在给定一棵树，判断这棵树是否可以经过McDic’s generat">
@@ -286,11 +286,19 @@
                 
               
 
-              <time title="创建时间：2019-10-02 21:14:08 / 修改时间：22:02:11" itemprop="dateCreated datePublished" datetime="2019-10-02T21:14:08+08:00">2019-10-02</time>
+              <time title="创建时间：2019-10-02 21:14:08" itemprop="dateCreated datePublished" datetime="2019-10-02T21:14:08+08:00">2019-10-02</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-03 10:30:25" itemprop="dateModified" datetime="2019-10-03T10:30:25+08:00">2019-10-03</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -323,7 +331,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>8.4k</span>
+              <span>8.3k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -359,7 +367,7 @@
 <ol>
 <li>如果以$x$为根的子树非法，返回<code>{0,-1}</code></li>
 <li>如果以$x$为根的子树为一个满二叉树，返回<code>{1,x离叶子结点的距离}</code></li>
-<li>如果被删除的结点在以$x$为根的子树内，返回<code>{1,x离叶子结点的距离}</code></li>
+<li>如果被删除的结点在以$x$为根的子树内，返回<code>{2,x离叶子结点的距离}</code></li>
 </ol>
 <p>很容易知道，如果<code>cnt&gt;3</code>，则返回<code>{0,-1}</code>；如果<code>cnt=0</code>，则它是叶子结点，返回<code>{1,0}</code>。</p>
 <p>如果$x$不为以上两种情况，<code>DFS</code>它的儿子$y$，设<code>DFS(y)</code>的返回值为$got$</p>
@@ -373,23 +381,23 @@
 </ol>
 <p>如果<code>spec.size()&gt;=2</code>，显然非法，返回<code>{0,-1}</code></p>
 <p>对<code>valid</code>排序。</p>
-<p>如果<code>cnt=1</code>，说明被删除的结点是个叶子结点，</p>
+<p>如果<code>cnt=1</code>，说明被删除的结点是它的叶子结点，</p>
 <ul>
-<li>如果<code>valid.size()=1&amp;&amp;valid[0]=0</code>，合法，存储答案并返回<code>2,1</code></li>
+<li>如果<code>valid.size()=1且valid[0]=0</code>，合法，存储答案并返回<code>2,1</code></li>
 <li>否则返回<code>{0,-1}</code></li>
 </ul>
 <p>如果<code>cnt=2</code>，</p>
 <ul>
-<li><p>如果<code>valid.size()=2&amp;&amp;valid[0]=valid[1]</code>，说明它是一个正常的满二叉树，返回<code>{1,valid[0]+1}</code></p>
+<li><p>如果<code>valid.size()=2且valid[0]=valid[1]</code>，说明它是一个正常的满二叉树，返回<code>{1,valid[0]+1}</code></p>
 </li>
-<li><p>如果<code>valid.size()=1&amp;&amp;valid[0]=spec[0]</code>，说明被删除的结点在它的其中一个子树中，返回<code>{2,valid[0]+1}</code></p>
+<li><p>如果<code>valid.size()=1且valid[0]=spec[0]</code>，说明被删除的结点在它的其中一个子树中，返回<code>{2,valid[0]+1}</code></p>
 </li>
 <li><p>否则返回<code>{0,-1}</code></p>
 </li>
 </ul>
 <p>如果<code>cnt=3</code>，</p>
 <ul>
-<li><p>如果<code>valid.size()=3&amp;&amp;valid[0]=valid[1]&amp;&amp;valid[1]+1=valid[2]</code>，说明它的其中一个儿子被删除了，返回<code>{2,valid[2]+1}</code></p>
+<li><p>如果<code>valid.size()=3且valid[0]=valid[1]且valid[1]+1=valid[2]</code>，说明它的其中一个儿子被删除了，返回<code>{2,valid[2]+1}</code></p>
 </li>
 <li><p>否则返回<code>{0,-1}</code></p>
 </li>
