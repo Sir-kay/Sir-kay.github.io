@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Codeforces 1238D AB-string 题解]]></title>
+    <url>%2F2019%2F10%2F21%2FCodeforces-1238D-AB-string-%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[Codeforces 1238D AB-string 题解题意一个字符串$s$如果 它的每一个字符都属于至少一个长度大于$1$的回文子串，那么称$s$是“好的”。如AABBB,ABAA,AAAAA是好的。 给定一个长度为$n (1\le n\le 3\cdot10^5)$的字符串$s$，求出$s$中好的子串的个数。 题解设一个字符串$t$由$t_1\dots t_n$组成，则$\forall 1&lt;i&lt;n$，$t_i$属于一个回文子串(默认长度大于$1$，以下同理)。 证明：设$i$满足$1&lt;i&lt;n$， 若$t_i=t_{i-1}$，则它属于回文串$t_{i-1}t_i$。 若$t_i=t_{i+1}$，则它属于回文串$t_it_{i+1}$。 若$t_i\neq t_{i-1},t_i\neq t_{i+1}$，那么$t_{i-1}=t_{i+1}$，则它属于回文串$t_{i-1}t_it_{i+1}$。 那么，只有当$i=1$或$i=n$时，$t_i$才有可能不属于一个回文子串。 下面考虑$t_1$不属于一个回文子串的情况。 $t_2\neq t_1$，否则$t_1$属于回文串$t_1t_2$。 $\forall i&gt;2$，$t_i\neq t_{i-1}$，否则$t_1$属于回文串$t_1\dots t_i$ $t_n$同理。 所以，$t$只有形如以下四种字符串时，$t$不是好的。 AB...B BA...A A...AB B...BA 给定$s$，求$s$中好的字串的个数，那么就可以转化为 所有字串-不是好的字串，即$\frac{n\times(n-1)}{2}-cnt$，$cnt$为不是好的子串。 显然，$cnt$可以$O(n)$求出。 程序123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206// #pragma GCC optimize(2)// #pragma G++ optimize(2)// #pragma comment(linker,"/STACK:102400000,102400000")// #include &lt;bits/stdc++.h&gt;#include &lt;map&gt;#include &lt;set&gt;#include &lt;list&gt;#include &lt;array&gt;#include &lt;cfenv&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;deque&gt;#include &lt;mutex&gt;#include &lt;queue&gt;#include &lt;ratio&gt;#include &lt;regex&gt;#include &lt;stack&gt;#include &lt;tuple&gt;#include &lt;atomic&gt;#include &lt;bitset&gt;#include &lt;cctype&gt;#include &lt;cerrno&gt;#include &lt;cfloat&gt;#include &lt;chrono&gt;#include &lt;cstdio&gt;#include &lt;cwchar&gt;#include &lt;future&gt;#include &lt;limits&gt;#include &lt;locale&gt;#include &lt;memory&gt;#include &lt;random&gt;#include &lt;string&gt;#include &lt;thread&gt;#include &lt;vector&gt;#include &lt;cassert&gt;#include &lt;climits&gt;#include &lt;clocale&gt;#include &lt;complex&gt;#include &lt;csetjmp&gt;#include &lt;csignal&gt;#include &lt;cstdarg&gt;#include &lt;cstddef&gt;#include &lt;cstdint&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;ctgmath&gt;#include &lt;cwctype&gt;#include &lt;fstream&gt;#include &lt;iomanip&gt;#include &lt;numeric&gt;#include &lt;sstream&gt;#include &lt;ccomplex&gt;#include &lt;cstdbool&gt;#include &lt;iostream&gt;#include &lt;typeinfo&gt;#include &lt;valarray&gt;#include &lt;algorithm&gt;#include &lt;cinttypes&gt;#include &lt;cstdalign&gt;#include &lt;stdexcept&gt;#include &lt;typeindex&gt;#include &lt;functional&gt;#include &lt;forward_list&gt;#include &lt;system_error&gt;#include &lt;unordered_map&gt;#include &lt;unordered_set&gt;#include &lt;scoped_allocator&gt;#include &lt;condition_variable&gt;// #include &lt;conio.h&gt;// #include &lt;windows.h&gt;using namespace std;typedef long long LL;typedef unsigned int ui;typedef unsigned long long ull;typedef float fl;typedef double ld;typedef long double LD;typedef pair&lt;int,int&gt; pii;#if (WIN32) || (WIN64) || (__WIN32) || (__WIN64) || (_WIN32) || (_WIN64) || (WINDOWS)#define lld "%I64d"#define llu "%I64u"#else#define lld "%lld"#define llu "%llu"#endif#define ui(n) ((unsigned int)(n))#define LL(n) ((long long)(n))#define ull(n) ((unsigned long long)(n))#define fl(n) ((float)(n))#define ld(n) ((double)(n))#define LD(n) ((long double)(n))#define char(n) ((char)(n))#define Bool(n) ((bool)(n))#define fixpoint(n) fixed&lt;&lt;setprecision(n)const int INF=1061109567;const int NINF=-1044266559;const LL LINF=4557430888798830399;const ld eps=1e-15;#define MOD (1000000007)#define PI (3.1415926535897932384626433832795028841971)/*#define MB_LEN_MAX 5#define SHRT_MIN (-32768)#define SHRT_MAX 32767#define USHRT_MAX 0xffffU#define INT_MIN (-2147483647 - 1)#define INT_MAX 2147483647#define UINT_MAX 0xffffffffU#define LONG_MIN (-2147483647L - 1)#define LONG_MAX 2147483647L#define ULONG_MAX 0xffffffffUL#define LLONG_MAX 9223372036854775807ll#define LLONG_MIN (-9223372036854775807ll - 1)#define ULLONG_MAX 0xffffffffffffffffull*/#define MP make_pair#define MT make_tuple#define All(a) (a).begin(),(a).end()#define pall(a) (a).rbegin(),(a).rend()#define Log(x,y) log(x)/log(y)#define SZ(a) ((int)(a).size())#define rep(i,n) for(int i=0;i&lt;((int)(n));i++)#define rep1(i,n) for(int i=1;i&lt;=((int)(n));i++)#define repa(i,a,n) for(int i=((int)(a));i&lt;((int)(n));i++)#define repa1(i,a,n) for(int i=((int)(a));i&lt;=((int)(n));i++)#define repd(i,n) for(int i=((int)(n))-1;i&gt;=0;i--)#define repd1(i,n) for(int i=((int)(n));i&gt;=1;i--)#define repda(i,n,a) for(int i=((int)(n));i&gt;((int)(a));i--)#define repda1(i,n,a) for(int i=((int)(n));i&gt;=((int)(a));i--)#define FOR(i,a,n,step) for(int i=((int)(a));i&lt;((int)(n));i+=((int)(step)))#define repv(itr,v) for(__typeof((v).begin()) itr=(v).begin();itr!=(v).end();itr++)#define repV(i,v) for(auto i:v)#define repE(i,v) for(auto &amp;i:v)#define MS(x,y) memset(x,y,sizeof(x))#define MC(x) MS(x,0)#define MINF(x) MS(x,63)#define MCP(x,y) memcpy(x,y,sizeof(y))#define sqr(x) ((x)*(x))#define UN(v) sort(All(v)),v.erase(unique(All(v)),v.end())#define filein(x) freopen(x,"r",stdin)#define fileout(x) freopen(x,"w",stdout)#define fileio(x)\ freopen(x".in","r",stdin);\ freopen(x".out","w",stdout)#define filein2(filename,name) ifstream name(filename,ios::in)#define fileout2(filename,name) ofstream name(filename,ios::out)#define file(filename,name) fstream name(filename,ios::in|ios::out)#define Pause system("pause")#define Cls system("cls")#define fs first#define sc second#define PC(x) putchar(x)#define GC(x) x=getchar()#define Endl PC('\n')#define SF scanf#define PF printf#define j0 J0#define j1 J1#define jn Jn#define y0 Y0#define y1 Y1#define yn Yninline int Read()&#123; int X=0,w=0;char ch=0;while(!isdigit(ch))&#123;w|=ch=='-';ch=getchar();&#125;while(isdigit(ch))X=(X&lt;&lt;3)+(X&lt;&lt;1)+(ch^48),ch=getchar(); return w?-X:X;&#125;inline void Write(int x)&#123;if(x&lt;0)putchar('-'),x=-x;if(x&gt;9)Write(x/10);putchar(x%10+'0');&#125;inline LL powmod(LL a,LL b)&#123;LL RES=1;a%=MOD;assert(b&gt;=0);for(;b;b&gt;&gt;=1)&#123;if(b&amp;1)RES=RES*a%MOD;a=a*a%MOD;&#125;return RES%MOD;&#125;inline LL gcdll(LL a,LL b)&#123;return b?gcdll(b,a%b):a;&#125;const int dx[]=&#123;0,1,0,-1,1,-1,-1,1&#125;;const int dy[]=&#123;1,0,-1,0,-1,-1,1,1&#125;;/************************************************************BEGIN************************************************************/const int maxn=300010;int n;string s;LL ans;int main()&#123; cin&gt;&gt;n&gt;&gt;s; ans=1ll*n*(n-1)/2; rep(i,n) &#123; for(int j=i+1;j&lt;n;j++) if(s[j]!=s[i]) ans-=(j==i+1?0:1); else break; &#125; repd(i,n) &#123; for(int j=i-1;j&gt;=0;j--) if(s[j]!=s[i]) ans--; else break; &#125; PF("%lld",ans); return 0;&#125;/*************************************************************END**************************************************************/ Tip: 这个程序看似是$O(n^2)$的，实际上是$O(n)$的。这里不再赘述。]]></content>
+      <categories>
+        <category>算法</category>
+        <category>Codeforces</category>
+      </categories>
+      <tags>
+        <tag>二分</tag>
+        <tag>构造</tag>
+        <tag>DP</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Codeforces 343C Read Time 题解]]></title>
     <url>%2F2019%2F10%2F15%2FCodeforces-343C-Read-Time-%E9%A2%98%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[Codeforces 343C Read Time 题解题意在一个无限长的线性磁盘上，有$n$个独立的磁头和$m$个需读取的位置$(1\le n,m\le 10^5)$，第$i$个磁头的初始位置为$h_i (1\le h_i\le 10^{10},h_i&lt;h_{i+1})$，第$j$个需读取位置为$p_j (1\le p_j\le 10^{10},p_j&lt;p_{j+1})$，需读取的位置互不相同的。 每一个磁头可以花一个单位时间移动到左边或右边的位置，也可以不动。可以有多个磁头在同一位置。每个磁头可以读取无限多个位置。一个位置被至少一个磁头走过后，它就被读取了。特别，一开始时，$h_i (1\le i\le n)$的位置就被读取过了。 求读取所有需读取位置需要的最少时间。 题解考虑二分需要的时间。 对于check(time)函数，每个磁头都有time单位个时间。 设当前考虑的磁头为第$i$个磁头，设$pos$为 第$i-1$个磁头没有完成的最左边的需读取位置，那么它要在读取$pos$后，尽可能地多读取位置。 确定尽可能向后读取的位置有两种，设走到$pos$后，还剩$r$个单位时间。 先走到$pos$，再用$r$个时间尽可能地多读取位置。 先用$\frac{r}{2}$个时间尽可能地多读取位置(用$\frac{r}{2}$个时间走回来)，再走到$pos$。 在$p$中upper_bound(MAX)后，就可以找到第$i$个磁头没有完成的最左边的需读取位置了。 所以check函数的时间复杂度是$O(n\log n)$。 Tip: 还有一种方法可以使check函数的时间复杂度是$O(n)$，具体不再赘述。 程序123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222// #pragma GCC optimize(2)// #pragma G++ optimize(2)// #pragma comment(linker,"/STACK:102400000,102400000")// #include &lt;bits/stdc++.h&gt;#include &lt;map&gt;#include &lt;set&gt;#include &lt;list&gt;#include &lt;array&gt;#include &lt;cfenv&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;deque&gt;#include &lt;mutex&gt;#include &lt;queue&gt;#include &lt;ratio&gt;#include &lt;regex&gt;#include &lt;stack&gt;#include &lt;tuple&gt;#include &lt;atomic&gt;#include &lt;bitset&gt;#include &lt;cctype&gt;#include &lt;cerrno&gt;#include &lt;cfloat&gt;#include &lt;chrono&gt;#include &lt;cstdio&gt;#include &lt;cwchar&gt;#include &lt;future&gt;#include &lt;limits&gt;#include &lt;locale&gt;#include &lt;memory&gt;#include &lt;random&gt;#include &lt;string&gt;#include &lt;thread&gt;#include &lt;vector&gt;#include &lt;cassert&gt;#include &lt;climits&gt;#include &lt;clocale&gt;#include &lt;complex&gt;#include &lt;csetjmp&gt;#include &lt;csignal&gt;#include &lt;cstdarg&gt;#include &lt;cstddef&gt;#include &lt;cstdint&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;ctgmath&gt;#include &lt;cwctype&gt;#include &lt;fstream&gt;#include &lt;iomanip&gt;#include &lt;numeric&gt;#include &lt;sstream&gt;#include &lt;ccomplex&gt;#include &lt;cstdbool&gt;#include &lt;iostream&gt;#include &lt;typeinfo&gt;#include &lt;valarray&gt;#include &lt;algorithm&gt;#include &lt;cinttypes&gt;#include &lt;cstdalign&gt;#include &lt;stdexcept&gt;#include &lt;typeindex&gt;#include &lt;functional&gt;#include &lt;forward_list&gt;#include &lt;system_error&gt;#include &lt;unordered_map&gt;#include &lt;unordered_set&gt;#include &lt;scoped_allocator&gt;#include &lt;condition_variable&gt;// #include &lt;conio.h&gt;// #include &lt;windows.h&gt;using namespace std;typedef long long LL;typedef unsigned int ui;typedef unsigned long long ull;typedef float fl;typedef double ld;typedef long double LD;typedef pair&lt;int,int&gt; pii;#if (WIN32) || (WIN64) || (__WIN32) || (__WIN64) || (_WIN32) || (_WIN64) || (WINDOWS)#define lld "%I64d"#define llu "%I64u"#else#define lld "%lld"#define llu "%llu"#endif#define ui(n) ((unsigned int)(n))#define LL(n) ((long long)(n))#define ull(n) ((unsigned long long)(n))#define fl(n) ((float)(n))#define ld(n) ((double)(n))#define LD(n) ((long double)(n))#define char(n) ((char)(n))#define Bool(n) ((bool)(n))#define fixpoint(n) fixed&lt;&lt;setprecision(n)const int INF=1061109567;const int NINF=-1044266559;const LL LINF=4557430888798830399;const ld eps=1e-15;#define MOD (1000000007)#define PI (3.1415926535897932384626433832795028841971)/*#define MB_LEN_MAX 5#define SHRT_MIN (-32768)#define SHRT_MAX 32767#define USHRT_MAX 0xffffU#define INT_MIN (-2147483647 - 1)#define INT_MAX 2147483647#define UINT_MAX 0xffffffffU#define LONG_MIN (-2147483647L - 1)#define LONG_MAX 2147483647L#define ULONG_MAX 0xffffffffUL#define LLONG_MAX 9223372036854775807ll#define LLONG_MIN (-9223372036854775807ll - 1)#define ULLONG_MAX 0xffffffffffffffffull*/#define MP make_pair#define MT make_tuple#define All(a) (a).begin(),(a).end()#define pall(a) (a).rbegin(),(a).rend()#define Log(x,y) log(x)/log(y)#define SZ(a) ((int)(a).size())#define rep(i,n) for(int i=0;i&lt;((int)(n));i++)#define rep1(i,n) for(int i=1;i&lt;=((int)(n));i++)#define repa(i,a,n) for(int i=((int)(a));i&lt;((int)(n));i++)#define repa1(i,a,n) for(int i=((int)(a));i&lt;=((int)(n));i++)#define repd(i,n) for(int i=((int)(n))-1;i&gt;=0;i--)#define repd1(i,n) for(int i=((int)(n));i&gt;=1;i--)#define repda(i,n,a) for(int i=((int)(n));i&gt;((int)(a));i--)#define repda1(i,n,a) for(int i=((int)(n));i&gt;=((int)(a));i--)#define FOR(i,a,n,step) for(int i=((int)(a));i&lt;((int)(n));i+=((int)(step)))#define repv(itr,v) for(__typeof((v).begin()) itr=(v).begin();itr!=(v).end();itr++)#define repV(i,v) for(auto i:v)#define repE(i,v) for(auto &amp;i:v)#define MS(x,y) memset(x,y,sizeof(x))#define MC(x) MS(x,0)#define MINF(x) MS(x,63)#define MCP(x,y) memcpy(x,y,sizeof(y))#define sqr(x) ((x)*(x))#define UN(v) sort(All(v)),v.erase(unique(All(v)),v.end())#define filein(x) freopen(x,"r",stdin)#define fileout(x) freopen(x,"w",stdout)#define fileio(x)\ freopen(x".in","r",stdin);\ freopen(x".out","w",stdout)#define filein2(filename,name) ifstream name(filename,ios::in)#define fileout2(filename,name) ofstream name(filename,ios::out)#define file(filename,name) fstream name(filename,ios::in|ios::out)#define Pause system("pause")#define Cls system("cls")#define fs first#define sc second#define PC(x) putchar(x)#define GC(x) x=getchar()#define Endl PC('\n')#define SF scanf#define PF printf#define j0 J0#define j1 J1#define jn Jn#define y0 Y0#define y1 Y1#define yn Yninline int Read()&#123; int X=0,w=0;char ch=0;while(!isdigit(ch))&#123;w|=ch=='-';ch=getchar();&#125;while(isdigit(ch))X=(X&lt;&lt;3)+(X&lt;&lt;1)+(ch^48),ch=getchar(); return w?-X:X;&#125;inline void Write(int x)&#123;if(x&lt;0)putchar('-'),x=-x;if(x&gt;9)Write(x/10);putchar(x%10+'0');&#125;inline LL powmod(LL a,LL b)&#123;LL RES=1;a%=MOD;assert(b&gt;=0);for(;b;b&gt;&gt;=1)&#123;if(b&amp;1)RES=RES*a%MOD;a=a*a%MOD;&#125;return RES%MOD;&#125;inline LL gcdll(LL a,LL b)&#123;return b?gcdll(b,a%b):a;&#125;const int dx[]=&#123;0,1,0,-1,1,-1,-1,1&#125;;const int dy[]=&#123;1,0,-1,0,-1,-1,1,1&#125;;/************************************************************BEGIN************************************************************/const int maxn=100010;int n,m;LL h[maxn],p[maxn];inline int check(LL x)&#123; int pos=1; rep1(i,n) &#123; LL rem=x-abs(h[i]-p[pos]); if(rem&lt;0) continue; pos=upper_bound(p+1,p+m+1,max(p[pos]+rem,h[i]+rem/2))-p; // max(go to read `pos`-&gt;go to read as more as possible tracks , \ go to read as more as possible tracks-&gt;go to read `pos`) if(pos==m+1) return 1; &#125; return 0;&#125;int main()&#123; SF("%d%d",&amp;n,&amp;m); rep1(i,n) SF("%lld",&amp;h[i]); rep1(i,m) SF("%lld",&amp;p[i]); LL l=0,r=1e18; // [l,r) while(l&lt;r) &#123; LL mid=(l+r)/2; if(check(mid)) r=mid; else l=mid+1; &#125; PF("%lld",r); return 0;&#125;/*************************************************************END**************************************************************/]]></content>
@@ -10,8 +25,8 @@
       </categories>
       <tags>
         <tag>二分</tag>
-        <tag>贪心</tag>
         <tag>双指针</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -23,8 +38,8 @@
         <category>Codeforces</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>数据结构</tag>
+        <tag>贪心</tag>
         <tag>模拟</tag>
       </tags>
   </entry>
@@ -49,9 +64,9 @@
         <category>Codeforces</category>
       </categories>
       <tags>
+        <tag>构造</tag>
         <tag>模拟</tag>
         <tag>图论</tag>
-        <tag>构造</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -65,8 +80,8 @@
       </categories>
       <tags>
         <tag>二分</tag>
-        <tag>贪心</tag>
         <tag>数据结构</tag>
+        <tag>贪心</tag>
         <tag>线段树</tag>
       </tags>
   </entry>
@@ -94,9 +109,9 @@
       </categories>
       <tags>
         <tag>二分</tag>
+        <tag>DP</tag>
         <tag>双指针</tag>
         <tag>倍增</tag>
-        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -208,8 +223,8 @@
       </categories>
       <tags>
         <tag>DP</tag>
-        <tag>记忆化搜索</tag>
         <tag>字符串</tag>
+        <tag>记忆化搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -235,9 +250,9 @@
       </categories>
       <tags>
         <tag>数学</tag>
+        <tag>DP</tag>
         <tag>贪心</tag>
         <tag>模拟</tag>
-        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
