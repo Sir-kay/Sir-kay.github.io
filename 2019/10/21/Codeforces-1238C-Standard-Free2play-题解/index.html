@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/github-fill 32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/github-fill 16.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="Codeforces 1238C Standard Free2play 题解题意有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。 每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中">
+<meta name="keywords" content="数学,DP,贪心">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces 1238C Standard Free2play 题解">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/Codeforces-1238C-Standard-Free2play-题解/index.html">
+<meta property="og:site_name" content="Sir-kay">
+<meta property="og:description" content="Codeforces 1238C Standard Free2play 题解题意有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。 每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-21T12:38:00.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces 1238C Standard Free2play 题解">
+<meta name="twitter:description" content="Codeforces 1238C Standard Free2play 题解题意有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。 每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中">
+  <link rel="alternate" href="/atom.xml" title="Sir-kay" type="application/atom+xml">
+  <link rel="canonical" href="http://yoursite.com/2019/10/21/Codeforces-1238C-Standard-Free2play-题解/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Codeforces 1238C Standard Free2play 题解 | Sir-kay</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sir-kay</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Think Once, Debug More. Think More, Debug Once.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/Codeforces-1238C-Standard-Free2play-题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sir-kay">
+      <meta itemprop="description" content="An OIer">
+      <meta itemprop="image" content="/images/Ulam spiral.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sir-kay">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">Codeforces 1238C Standard Free2play 题解
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-21 20:00:17 / 修改时间：20:38:00" itemprop="dateCreated datePublished" datetime="2019-10-21T20:00:17+08:00">2019-10-21</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>6.9k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>6 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Codeforces-1238C-Standard-Free2play-题解"><a href="#Codeforces-1238C-Standard-Free2play-题解" class="headerlink" title="Codeforces 1238C Standard Free2play 题解"></a>Codeforces 1238C Standard Free2play 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。</p>
+<p>每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中$p_1=h$。</p>
+<p>你一开始站在$p_1$上，即在悬崖最高点$h$。若你站在高度为$x$的地方(高度为$x$的平台必须在悬崖外)，你可以按下一个按钮。如果你按下了按钮，那么高度为$x$和$x-1$的平台的状态会改变，即高度为$x$的平台隐藏到悬崖里，若高度为$x-1$的平台在悬崖里，则它移动到悬崖外；若它在悬崖外，则隐藏到悬崖里。如果按下按钮后，高度为$x-1$的平台在悬崖外，那么你安全地落在高度为$x-1$的平台上(否则你会掉落在下一个在悬崖外的平台上)。<strong>这是唯一一种方式从一个平台移动到另外一个平台</strong>。</p>
+<p>你可以安全地从$x$掉落到$x-2$，但是如果从$x$掉落在$x-3$或更低处，你就死了。</p>
+<p>你可以使用魔法。一次魔法只能使在任何高度的平台改变状态(除了高度为$h$的平台)。</p>
+<p>求你使用魔法的最小次数，使得你安全地落在地上(即高度为$0$的地方)。</p>
+<a id="more"></a>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>首先，若你在高度为$x$的平台上，下一个在悬崖外平台的高度为$y$且$x&gt;y+1$，那么你可以安全地、不使用任何魔法，从$x$到达$y+1$。</p>
+<p>现在要考虑的是，你在高度为$x$的平台上，有多个连续的、在悬崖外的平台，设它们的高度为$q_1,q_2,\dots,q_n$且$q_1=x,\forall 1\le i&lt;n,q_i=q_{i+1}+1$。</p>
+<ul>
+<li>若$n$为奇数，则可以安全地、不使用任何魔法，从$q_1$到达$q_n$(因为每次按下按钮，都只会掉下$2$格)。</li>
+<li>若$n$为偶数，则需要一次魔法(如果不使用魔法，在$q_{n-1}$按下按钮时，会掉下$2$格以上)，把高度为$q_n+1$的平台移动到悬崖外。</li>
+</ul>
+<p>注意，当$q_n=1$时，可以不需要魔法，直接掉落$2$格到地面。</p>
+<h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// #pragma GCC optimize(2)</span></span><br><span class="line"><span class="comment">// #pragma G++ optimize(2)</span></span><br><span class="line"><span class="comment">// #pragma comment(linker,"/STACK:102400000,102400000")</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// #include &lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cfenv&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ratio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;regex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tuple&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;atomic&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cerrno&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cfloat&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cwchar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;future&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;locale&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;clocale&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;complex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;csetjmp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;csignal&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdarg&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstddef&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdint&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctgmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cwctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;numeric&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ccomplex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdbool&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;valarray&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cinttypes&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdalign&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdexcept&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeindex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;forward_list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;system_error&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;scoped_allocator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;condition_variable&gt;</span></span></span><br><span class="line"><span class="comment">// #include &lt;conio.h&gt;</span></span><br><span class="line"><span class="comment">// #include &lt;windows.h&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> ui;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">float</span> fl;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> (WIN32) || (WIN64) || (__WIN32) || (__WIN64) || (_WIN32) || (_WIN64) || (WINDOWS)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lld <span class="meta-string">"%I64d"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> llu <span class="meta-string">"%I64u"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lld <span class="meta-string">"%lld"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> llu <span class="meta-string">"%llu"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ui(n) ((unsigned int)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL(n) ((long long)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull(n) ((unsigned long long)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fl(n) ((float)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ld(n) ((double)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LD(n) ((long double)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> char(n) ((char)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Bool(n) ((bool)(n))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fixpoint(n) fixed&lt;&lt;setprecision(n)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">1061109567</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NINF=<span class="number">-1044266559</span>;</span><br><span class="line"><span class="keyword">const</span> LL LINF=<span class="number">4557430888798830399</span>;</span><br><span class="line"><span class="keyword">const</span> ld eps=<span class="number">1e-15</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD (1000000007)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI (3.1415926535897932384626433832795028841971)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#define MB_LEN_MAX 5</span></span><br><span class="line"><span class="comment">#define SHRT_MIN (-32768)</span></span><br><span class="line"><span class="comment">#define SHRT_MAX 32767</span></span><br><span class="line"><span class="comment">#define USHRT_MAX 0xffffU</span></span><br><span class="line"><span class="comment">#define INT_MIN (-2147483647 - 1)</span></span><br><span class="line"><span class="comment">#define INT_MAX 2147483647</span></span><br><span class="line"><span class="comment">#define UINT_MAX 0xffffffffU</span></span><br><span class="line"><span class="comment">#define LONG_MIN (-2147483647L - 1)</span></span><br><span class="line"><span class="comment">#define LONG_MAX 2147483647L</span></span><br><span class="line"><span class="comment">#define ULONG_MAX 0xffffffffUL</span></span><br><span class="line"><span class="comment">#define LLONG_MAX 9223372036854775807ll</span></span><br><span class="line"><span class="comment">#define LLONG_MIN (-9223372036854775807ll - 1)</span></span><br><span class="line"><span class="comment">#define ULLONG_MAX 0xffffffffffffffffull</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MT make_tuple</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> All(a) (a).begin(),(a).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pall(a) (a).rbegin(),(a).rend()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Log(x,y) log(x)/log(y)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(a) ((int)(a).size())</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,n) for(int i=0;i&lt;((int)(n));i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep1(i,n) for(int i=1;i&lt;=((int)(n));i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repa(i,a,n) for(int i=((int)(a));i&lt;((int)(n));i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repa1(i,a,n) for(int i=((int)(a));i&lt;=((int)(n));i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repd(i,n) for(int i=((int)(n))-1;i&gt;=0;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repd1(i,n) for(int i=((int)(n));i&gt;=1;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repda(i,n,a) for(int i=((int)(n));i&gt;((int)(a));i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repda1(i,n,a) for(int i=((int)(n));i&gt;=((int)(a));i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOR(i,a,n,step) for(int i=((int)(a));i&lt;((int)(n));i+=((int)(step)))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repv(itr,v) for(__typeof((v).begin()) itr=(v).begin();itr!=(v).end();itr++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repV(i,v) for(auto i:v)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> repE(i,v) for(auto &amp;i:v)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MS(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MC(x) MS(x,0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MINF(x) MS(x,63)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MCP(x,y) memcpy(x,y,sizeof(y))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sqr(x) ((x)*(x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UN(v) sort(All(v)),v.erase(unique(All(v)),v.end())</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> filein(x) freopen(x,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fileout(x) freopen(x,<span class="meta-string">"w"</span>,stdout)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fileio(x)\</span></span><br><span class="line">	freopen(x<span class="string">".in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);\</span><br><span class="line">	freopen(x<span class="string">".out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>)</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> filein2(filename,name) ifstream name(filename,ios::in)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fileout2(filename,name) ofstream name(filename,ios::out)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> file(filename,name) fstream name(filename,ios::in|ios::out)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Pause system(<span class="meta-string">"pause"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Cls system(<span class="meta-string">"cls"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fs first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PC(x) putchar(x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> GC(x) x=getchar()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Endl PC(<span class="meta-string">'\n'</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SF scanf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PF printf</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> j0 J0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> j1 J1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> jn Jn</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y0 Y0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y1 Y1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> yn Yn</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X=<span class="number">0</span>,w=<span class="number">0</span>;<span class="keyword">char</span> ch=<span class="number">0</span>;<span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch))&#123;w|=ch==<span class="string">'-'</span>;ch=getchar();&#125;<span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch))X=(X&lt;&lt;<span class="number">3</span>)+(X&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">	<span class="keyword">return</span> w?-X:X;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Write</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">if</span>(x&lt;<span class="number">0</span>)<span class="built_in">putchar</span>(<span class="string">'-'</span>),x=-x;<span class="keyword">if</span>(x&gt;<span class="number">9</span>)Write(x/<span class="number">10</span>);<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">powmod</span><span class="params">(LL a,LL b)</span></span>&#123;LL RES=<span class="number">1</span>;a%=MOD;assert(b&gt;=<span class="number">0</span>);<span class="keyword">for</span>(;b;b&gt;&gt;=<span class="number">1</span>)&#123;<span class="keyword">if</span>(b&amp;<span class="number">1</span>)RES=RES*a%MOD;a=a*a%MOD;&#125;<span class="keyword">return</span> RES%MOD;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">gcdll</span><span class="params">(LL a,LL b)</span></span>&#123;<span class="keyword">return</span> b?gcdll(b,a%b):a;&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dx[]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dy[]=&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="comment">/************************************************************BEGIN************************************************************/</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> q,h,n,p[maxn],ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SF(<span class="string">"%d"</span>,&amp;q);</span><br><span class="line">	<span class="keyword">while</span>(q--)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		SF(<span class="string">"%d%d"</span>,&amp;h,&amp;n);</span><br><span class="line">		rep(i,n) SF(<span class="string">"%d"</span>,&amp;p[i]);</span><br><span class="line"></span><br><span class="line">		rep(i,n)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> cur=p[i],cnt=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">while</span>(p[i]==p[i+<span class="number">1</span>]+<span class="number">1</span>&amp;&amp;i+<span class="number">1</span>&lt;n)</span><br><span class="line">			&#123;</span><br><span class="line">				cnt++;</span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>((cur==h&amp;&amp;(cnt%<span class="number">2</span>==<span class="number">0</span>)||cur!=h&amp;&amp;(cnt%<span class="number">2</span>==<span class="number">1</span>))&amp;&amp;p[i]!=<span class="number">1</span>) ans++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		PF(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*************************************************************END**************************************************************/</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">__EOF__</div>
+    
+</div>
+
+        
+      </div>
+      
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+            
+              <a href="/tags/DP/" rel="tag"><i class="fa fa-tag"></i> DP</a>
+            
+              <a href="/tags/贪心/" rel="tag"><i class="fa fa-tag"></i> 贪心</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/21/Codeforces-1238D-AB-string-题解/" rel="next" title="Codeforces 1238D AB-string 题解">
+                  <i class="fa fa-chevron-left"></i> Codeforces 1238D AB-string 题解
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/Ulam spiral.png"
+      alt="Sir-kay">
+  <p class="site-author-name" itemprop="name">Sir-kay</p>
+  <div class="site-description motion-element" itemprop="description">An OIer</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Sir-kay" title="GitHub &rarr; https://github.com/Sir-kay" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.cnblogs.com/bitstd" title="cnblog &rarr; https://www.cnblogs.com/bitstd" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>cnblog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://wordpress.com" title="Wordpress &rarr; https://wordpress.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-wordpress"></i>Wordpress</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://blog.csdn.net/qq_37339517" title="csdn &rarr; https://blog.csdn.net/qq_37339517" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>csdn</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Codeforces-1238C-Standard-Free2play-题解"><span class="nav-number">1.</span> <span class="nav-text">Codeforces 1238C Standard Free2play 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">1.2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序"><span class="nav-number">1.3.</span> <span class="nav-text">程序</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sir-kay</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">162k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+-->
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+    var gitalk = new Gitalk({
+      clientID: 'bbc9533be7a9c3c28ea1',
+      clientSecret: '7852b4d0e8afebcb03b30d3ba82b01e16116c93f',
+      repo: 'sir-kay.github.io',
+      owner: 'Sir-kay',
+      admin: ['Sir-kay'],
+      id: '9cd6fa02ba5cfc6b594f19165ee0ff54',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
