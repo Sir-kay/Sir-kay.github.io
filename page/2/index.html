@@ -252,6 +252,291 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/Codeforces-609F-Frogs-and-mosquitoes-题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sir-kay">
+      <meta itemprop="description" content="An OIer">
+      <meta itemprop="image" content="/images/Ulam spiral.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sir-kay">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/09/21/Codeforces-609F-Frogs-and-mosquitoes-题解/" class="post-title-link" itemprop="url">Codeforces 609F Frogs and mosquitoes 题解</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-21 22:42:56" itemprop="dateCreated datePublished" datetime="2019-09-21T22:42:56+08:00">2019-09-21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-22 10:16:37" itemprop="dateModified" datetime="2019-09-22T10:16:37+08:00">2019-09-22</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>7.7k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>7 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Codeforces-609F-Frogs-and-mosquitoes-题解"><a href="#Codeforces-609F-Frogs-and-mosquitoes-题解" class="headerlink" title="Codeforces 609F Frogs and mosquitoes 题解"></a><a href="http://codeforces.com/contest/609/problem/F" target="_blank" rel="noopener">Codeforces 609F Frogs and mosquitoes</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有$n (1\le n\le 2\cdot10^5)$个青蛙固定在平面直角坐标系中$Ox$的非负半轴上，对于第$i (1\le i\le n)$个青蛙有两个值，分别是$x_i$和$t_i (0\le x_i,t_i\le 10^9)$($x_i$两两不同)，$x_i$代表它的位置，$t_i$代表它的舌头的长度。</p>
+<p>有$m (1\le m\le 2\cdot10^5)$只蚊子也固定在$Ox$的非负半轴上，对于第$i (1\le i\le m)$只蚊子有两个值，分别是$p_i$和$b_i (0\le p_i,b_i\le 10^9)$，$p_i$代表它的位置，$b_i$代表它的大小。</p>
+<p>如果一个青蛙$i$和一只蚊子$j$，满足 $p_j$在区间$[x_i,x_i+t_i]$内，那么青蛙$i$就可以吃掉蚊子$j$，并且<strong>舌头会增长$b_j$</strong>。<strong>如果有多个青蛙可以吃掉同一个蚊子，那么这个蚊子会被$x_i$最小的那个青蛙吃掉。</strong></p>
+<p><strong>蚊子是按照输入的顺序降临的，如果第$i$个蚊子要降临，必须满足 青蛙吃光了<u>可能吃掉</u>的所有蚊子$j (1\le j&lt;i)$。</strong></p>
+<p>问第$i$只青蛙吃掉了多少蚊子和最后它的舌头有多长。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/21/Codeforces-609F-Frogs-and-mosquitoes-题解/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/Codeforces-1119D-Frets-On-Fire-题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sir-kay">
+      <meta itemprop="description" content="An OIer">
+      <meta itemprop="image" content="/images/Ulam spiral.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sir-kay">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/09/14/Codeforces-1119D-Frets-On-Fire-题解/" class="post-title-link" itemprop="url">Codeforces 1119D Frets On Fire 题解</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-14 23:09:40" itemprop="dateCreated datePublished" datetime="2019-09-14T23:09:40+08:00">2019-09-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-22 10:23:17" itemprop="dateModified" datetime="2019-09-22T10:23:17+08:00">2019-09-22</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>7.7k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>7 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Codeforces-1119D-Frets-On-Fire-题解"><a href="#Codeforces-1119D-Frets-On-Fire-题解" class="headerlink" title="Codeforces 1119D Frets On Fire 题解"></a><a href="http://codeforces.com/contest/1119/problem/D" target="_blank" rel="noopener">Codeforces 1119D Frets On Fire</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定$n$和$s_1,s_2,\dots,s_n$，由此得到一个$n\times(10^{18}+1)$的矩阵$f$，其中$f_{i,j}=s_i+j (1\le i\le n,0\le j\le 10^{18})$。</p>
+<p>在样例$1$中，给定$n=6,s=[3,1,4,1,5,9]$，得到</p>
+<script type="math/tex; mode=display">
+\begin{matrix} 
+\textbf{f} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \ldots \\ 
+s_1: & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & \dots \\ 
+s_2: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \dots \\ 
+s_3: & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & \dots \\ 
+s_4: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \dots \\ 
+s_5: & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & \dots \\ 
+s_6: & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & \dots 
+\end{matrix}</script><p>再给定$q$个查询，每个查询有$L,R$，问第$L$列到第$R$列(以下表达为$[L,R]$)有多少个不同的数。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/14/Codeforces-1119D-Frets-On-Fire-题解/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/08/Codeforces-309B-Context-Advertising-题解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1323,282 +1608,6 @@
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/Ural-1238-Folding-题解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sir-kay">
-      <meta itemprop="description" content="An OIer">
-      <meta itemprop="image" content="/images/Ulam spiral.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sir-kay">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/18/Ural-1238-Folding-题解/" class="post-title-link" itemprop="url">Ural 1238 Folding 题解</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-18 15:39:47" itemprop="dateCreated datePublished" datetime="2019-08-18T15:39:47+08:00">2019-08-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-20 18:42:25" itemprop="dateModified" datetime="2019-09-20T18:42:25+08:00">2019-09-20</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Ural/" itemprop="url" rel="index"><span itemprop="name">Ural</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>6.8k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>6 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Ural-1238-Folding-题解"><a href="#Ural-1238-Folding-题解" class="headerlink" title="Ural 1238 Folding 题解"></a><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1238" target="_blank" rel="noopener">Ural 1238 Folding</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>定义折叠、展开为：</p>
-<ul>
-<li>单个大写英文字母是一个折叠的串，把它展开后是它本身。</li>
-<li>如果$S$和$Q$是折叠的串，则$SQ$也是折叠的串。如果$S$展开后为$S’$，$Q$展开后为$Q’$，则$SQ$展开后为$S’Q’$。</li>
-<li>如果$S$是个折叠的串，则$X(S)$也是折叠的串，其中$X$是一个十进制大于$1$的整数，如果$S$展开为$S’$，则$X(S)$展开后为$S’$重复$X$次。</li>
-</ul>
-<p>给定一个字符串(长度小于等于$100$)，求把它折叠后有最小长度的那个字符串。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/18/Ural-1238-Folding-题解/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/Ural-1201-Which-Day-Is-It-题解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sir-kay">
-      <meta itemprop="description" content="An OIer">
-      <meta itemprop="image" content="/images/Ulam spiral.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sir-kay">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/18/Ural-1201-Which-Day-Is-It-题解/" class="post-title-link" itemprop="url">Ural 1201 Which Day Is It 题解</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-18 15:39:40" itemprop="dateCreated datePublished" datetime="2019-08-18T15:39:40+08:00">2019-08-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-31 23:01:11" itemprop="dateModified" datetime="2019-08-31T23:01:11+08:00">2019-08-31</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Ural/" itemprop="url" rel="index"><span itemprop="name">Ural</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>7.9k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>7 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Ural-1201-Which-Day-Is-It-题解"><a href="#Ural-1201-Which-Day-Is-It-题解" class="headerlink" title="Ural 1201 Which Day Is It? 题解"></a><a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1201" target="_blank" rel="noopener">Ural 1201 Which Day Is It?</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>打印一个月历。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/18/Ural-1201-Which-Day-Is-It-题解/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -1639,7 +1648,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1739,7 +1748,11 @@
         
           
         
-        <span class="site-state-item-count">29</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1808,12 +1821,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">162k</span>
+    <span title="站点总字数">171k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:28</span>
+    <span title="站点阅读时长">2:36</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
