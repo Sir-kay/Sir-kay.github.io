@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Codeforces 1238C Standard Free2play 题解题意有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。 每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T12:38:00.108Z">
+<meta property="og:updated_time" content="2019-10-26T02:58:54.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 1238C Standard Free2play 题解">
 <meta name="twitter:description" content="Codeforces 1238C Standard Free2play 题解题意有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。 每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中">
@@ -286,11 +286,19 @@
                 
               
 
-              <time title="创建时间：2019-10-21 20:00:17 / 修改时间：20:38:00" itemprop="dateCreated datePublished" datetime="2019-10-21T20:00:17+08:00">2019-10-21</time>
+              <time title="创建时间：2019-10-21 20:00:17" itemprop="dateCreated datePublished" datetime="2019-10-21T20:00:17+08:00">2019-10-21</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-26 10:58:54" itemprop="dateModified" datetime="2019-10-26T10:58:54+08:00">2019-10-26</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -346,7 +354,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Codeforces-1238C-Standard-Free2play-题解"><a href="#Codeforces-1238C-Standard-Free2play-题解" class="headerlink" title="Codeforces 1238C Standard Free2play 题解"></a>Codeforces 1238C Standard Free2play 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。</p>
+        <h2 id="Codeforces-1238C-Standard-Free2play-题解"><a href="#Codeforces-1238C-Standard-Free2play-题解" class="headerlink" title="Codeforces 1238C Standard Free2play 题解"></a><a href="http://codeforces.com/contest/1238/problem/C" target="_blank" rel="noopener">Codeforces 1238C Standard Free2play</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有一个高为$h (1\le h\le10^9)$的悬崖，在高度为$x(1\le x\le h)$的位置上，有一个可移动的平台。</p>
 <p>每个平台有两种状态：隐藏在悬崖里 或 在悬崖外。一开始，有$n (1\le n\le\min(h,2\cdot10^5))$个在悬崖外的平台，分别为$p_1,p_2,\dots,p_n$，其中$p_1=h$。</p>
 <p>你一开始站在$p_1$上，即在悬崖最高点$h$。若你站在高度为$x$的地方(高度为$x$的平台必须在悬崖外)，你可以按下一个按钮。如果你按下了按钮，那么高度为$x$和$x-1$的平台的状态会改变，即高度为$x$的平台隐藏到悬崖里，若高度为$x-1$的平台在悬崖里，则它移动到悬崖外；若它在悬崖外，则隐藏到悬崖里。如果按下按钮后，高度为$x-1$的平台在悬崖外，那么你安全地落在高度为$x-1$的平台上(否则你会掉落在下一个在悬崖外的平台上)。<strong>这是唯一一种方式从一个平台移动到另外一个平台</strong>。</p>
 <p>你可以安全地从$x$掉落到$x-2$，但是如果从$x$掉落在$x-3$或更低处，你就死了。</p>

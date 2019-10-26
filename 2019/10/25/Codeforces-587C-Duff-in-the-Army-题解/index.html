@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Codeforces 587C Duff in the Army 题解题意给定一棵有$n$个结点的树，某些结点上有一些数，总共有$m$个数，有$q (1\le n,m,k\le 10^5)$次询问。 每次询问给定$u,v,a (1\le u,v\le n,1\le a\le10)$，求出 在$u$到$v$的路径上所有的结点上的数中，前$a$小的数(如果总数小于$a$，则输出所有的数)。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-25T10:27:31.091Z">
+<meta property="og:updated_time" content="2019-10-26T02:59:18.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 587C Duff in the Army 题解">
 <meta name="twitter:description" content="Codeforces 587C Duff in the Army 题解题意给定一棵有$n$个结点的树，某些结点上有一些数，总共有$m$个数，有$q (1\le n,m,k\le 10^5)$次询问。 每次询问给定$u,v,a (1\le u,v\le n,1\le a\le10)$，求出 在$u$到$v$的路径上所有的结点上的数中，前$a$小的数(如果总数小于$a$，则输出所有的数)。">
@@ -286,11 +286,19 @@
                 
               
 
-              <time title="创建时间：2019-10-25 18:13:33 / 修改时间：18:27:31" itemprop="dateCreated datePublished" datetime="2019-10-25T18:13:33+08:00">2019-10-25</time>
+              <time title="创建时间：2019-10-25 18:13:33" itemprop="dateCreated datePublished" datetime="2019-10-25T18:13:33+08:00">2019-10-25</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-26 10:59:18" itemprop="dateModified" datetime="2019-10-26T10:59:18+08:00">2019-10-26</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -346,7 +354,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Codeforces-587C-Duff-in-the-Army-题解"><a href="#Codeforces-587C-Duff-in-the-Army-题解" class="headerlink" title="Codeforces 587C Duff in the Army 题解"></a>Codeforces 587C Duff in the Army 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定一棵有$n$个结点的树，某些结点上有一些数，总共有$m$个数，有$q (1\le n,m,k\le 10^5)$次询问。</p>
+        <h2 id="Codeforces-587C-Duff-in-the-Army-题解"><a href="#Codeforces-587C-Duff-in-the-Army-题解" class="headerlink" title="Codeforces 587C Duff in the Army 题解"></a><a href="http://codeforces.com/contest/587/problem/C" target="_blank" rel="noopener">Codeforces 587C Duff in the Army</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定一棵有$n$个结点的树，某些结点上有一些数，总共有$m$个数，有$q (1\le n,m,k\le 10^5)$次询问。</p>
 <p>每次询问给定$u,v,a (1\le u,v\le n,1\le a\le10)$，求出 在$u$到$v$的路径上所有的结点上的数中，前$a$小的数(如果总数小于$a$，则输出所有的数)。</p>
 <a id="more"></a>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>在树中，从$u$到$v$的路径上，$a\le10$，从这三个条件可以想到用树链剖分，线段树中每个结点维护的是一个长度小于等于$10$的<code>vector</code>，表示的是这些点中前$10$小的数，可以$O(1)$合并。</p>
