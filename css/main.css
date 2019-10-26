@@ -420,6 +420,36 @@ body {
     width: 73%;
   }
 }
+.highlight-wrap {
+  position: relative;
+}
+.highlight-wrap:hover .copy-btn,
+.highlight-wrap .copy-btn:focus {
+  opacity: 1;
+}
+.copy-btn {
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.6;
+  opacity: 0;
+  outline: 0;
+  padding: 2px 6px;
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+  vertical-align: middle;
+  white-space: nowrap;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  background-color: #fff;
+  border: none;
+  font-size: 0.8125em;
+  right: 0;
+  top: 0;
+}
 pre,
 .highlight {
   background: #f7f7f7;
@@ -1656,7 +1686,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6a7113;
+  background: #f6f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
