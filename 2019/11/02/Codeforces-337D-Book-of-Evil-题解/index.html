@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Sir-kay">
 <meta property="og:description" content="Codeforces 337D Book of Evil 题解题意给定一个有$n$个结点的树，树上有$m (1\le m\le n\le10^5)$个结点被感染，分别是$p_1,p_2,\dots,p_m (1\le p_i\le n)$。 有一本“邪恶之书”在树上的某一个结点上，它可以感染 所有到它的距离小于等于$d (0\le d\le n-1)$的结点。 求“邪恶之书”可以在哪些结点上，使得">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-02T09:16:11.168Z">
+<meta property="og:updated_time" content="2019-11-02T09:24:18.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 337D Book of Evil 题解">
 <meta name="twitter:description" content="Codeforces 337D Book of Evil 题解题意给定一个有$n$个结点的树，树上有$m (1\le m\le n\le10^5)$个结点被感染，分别是$p_1,p_2,\dots,p_m (1\le p_i\le n)$。 有一本“邪恶之书”在树上的某一个结点上，它可以感染 所有到它的距离小于等于$d (0\le d\le n-1)$的结点。 求“邪恶之书”可以在哪些结点上，使得">
@@ -286,7 +286,7 @@
                 
               
 
-              <time title="创建时间：2019-11-02 16:54:57 / 修改时间：17:16:11" itemprop="dateCreated datePublished" datetime="2019-11-02T16:54:57+08:00">2019-11-02</time>
+              <time title="创建时间：2019-11-02 16:54:57 / 修改时间：17:24:18" itemprop="dateCreated datePublished" datetime="2019-11-02T16:54:57+08:00">2019-11-02</time>
             </span>
           
             
@@ -352,7 +352,7 @@
 <a id="more"></a>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>与树的直径类似。</p>
 <p>从$1$号结点<code>dfs</code>，找到距离它最远的<strong>感染结点</strong>$v_1$。</p>
-<p>从$v_1$<code>dfs</code>，找到距离它最优的<strong>感染结点</strong>$v_2$。</p>
+<p>从$v_1$<code>dfs</code>，找到距离它最远的<strong>感染结点</strong>$v_2$。</p>
 <p>从$v_2$<code>dfs</code>。</p>
 <p>找到所有点$x$，使得到$v_1$和$v_2$的距离都小于等于$d$，输出个数即可。时间复杂度$O(n)$。</p>
 <p><strong>证明</strong>：</p>
