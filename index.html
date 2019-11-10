@@ -404,7 +404,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-09 07:54:29" itemprop="dateModified" datetime="2019-11-09T07:54:29+08:00">2019-11-09</time>
+                <time title="修改时间：2019-11-10 11:29:37" itemprop="dateModified" datetime="2019-11-10T11:29:37+08:00">2019-11-10</time>
               </span>
             
           
@@ -446,6 +446,265 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/09/02/头文件和宏定义/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/10/Codeforces-1132D-Stressful-Training-题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sir-kay">
+      <meta itemprop="description" content="An OIer">
+      <meta itemprop="image" content="/images/Ulam spiral.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sir-kay">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/11/10/Codeforces-1132D-Stressful-Training-题解/" class="post-title-link" itemprop="url">Codeforces 1132D Stressful Training 题解</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-10 21:02:07 / 修改时间：21:43:55" itemprop="dateCreated datePublished" datetime="2019-11-10T21:02:07+08:00">2019-11-10</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>14k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>12 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Codeforces-1132D-Stressful-Training-题解"><a href="#Codeforces-1132D-Stressful-Training-题解" class="headerlink" title="Codeforces 1132D Stressful Training 题解"></a><a href="http://codeforces.com/contest/1132/problem/D" target="_blank" rel="noopener">Codeforces 1132D Stressful Training</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有$n$个学生打比赛，第$i$个学生的电脑的初始电量为$a_i$，每分钟使用的电量为$b_i$(即如果在一分钟的开始有$c$格电量，在下一分钟的开始，电量变为$c-b_i$)。整场比赛持续$k$分钟($1\le n\le 2\times10^5,1\le k\le 2\times10^5,1\le a_i\le 10^{12},1\le b_i\le 10^7$)。</p>
+<p>在比赛的开始时有<strong>一个</strong>充电器。你可以选择充电器的输出电量$x$，$x$为一个非负整数，且以后不能更改。<strong>在每一分钟的开始</strong>，你可以把充电器插在任意一个学生的电脑上(如果一个电脑的用电量为$b_i$，插入了充电器后每分钟会消耗$b_i-x$格电)。每个学生的电脑的电量没有上限。充电器在一个时刻最多给一台电脑充电。</p>
+<p>一个学生成功地完成比赛如果在比赛的过程中他的电脑的电量总是一个非负数。比赛结束时电脑的电量无关紧要。</p>
+<p>输出充电器最小的输出电量，使得所有的学生都可以成功地完成比赛，或者输出$-1$表示不可能。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/10/Codeforces-1132D-Stressful-Training-题解/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/10/Codeforces-1249D-Maximum-Weight-Subset-题解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sir-kay">
+      <meta itemprop="description" content="An OIer">
+      <meta itemprop="image" content="/images/Ulam spiral.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sir-kay">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/11/10/Codeforces-1249D-Maximum-Weight-Subset-题解/" class="post-title-link" itemprop="url">Codeforces 1249D Maximum Weight Subset 题解</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-10 20:25:54 / 修改时间：21:03:02" itemprop="dateCreated datePublished" datetime="2019-11-10T20:25:54+08:00">2019-11-10</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>6.6k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>6 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Codeforces-1249D-Maximum-Weight-Subset-题解"><a href="#Codeforces-1249D-Maximum-Weight-Subset-题解" class="headerlink" title="Codeforces 1249D Maximum Weight Subset 题解"></a><a href="http://codeforces.com/contest/1249/problem/F" target="_blank" rel="noopener">Codeforces 1249D Maximum Weight Subset</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定一棵有$n$个结点的树和$k$，编号为$1\sim n$，结点$i$的权值为$a_i$ ($1\le n,k\le200,1\le a_i\le10^5$)。</p>
+<p>现在请你选出一些节点，使得这些节点的权值和最大 并且 这些节点中任意两个节点的距离都$&gt;k$。 </p>
+<p> 并输出这个最大的权值。 </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/11/10/Codeforces-1249D-Maximum-Weight-Subset-题解/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -781,7 +1040,7 @@ y-x,\quad &\text{if}\ |x-y|>1 \\
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-26 10:59:49" itemprop="dateModified" datetime="2019-10-26T10:59:49+08:00">2019-10-26</time>
+                <time title="修改时间：2019-11-10 11:35:39" itemprop="dateModified" datetime="2019-11-10T11:35:39+08:00">2019-11-10</time>
               </span>
             
           
@@ -1199,7 +1458,7 @@ y-x,\quad &\text{if}\ |x-y|>1 \\
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-26 10:58:24" itemprop="dateModified" datetime="2019-10-26T10:58:24+08:00">2019-10-26</time>
+                <time title="修改时间：2019-11-10 10:19:28" itemprop="dateModified" datetime="2019-11-10T10:19:28+08:00">2019-11-10</time>
               </span>
             
           
@@ -1285,287 +1544,6 @@ y-x,\quad &\text{if}\ |x-y|>1 \\
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/Codeforces-343C-Read-Time-题解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sir-kay">
-      <meta itemprop="description" content="An OIer">
-      <meta itemprop="image" content="/images/Ulam spiral.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sir-kay">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/10/15/Codeforces-343C-Read-Time-题解/" class="post-title-link" itemprop="url">Codeforces 343C Read Time 题解</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-15 21:10:31" itemprop="dateCreated datePublished" datetime="2019-10-15T21:10:31+08:00">2019-10-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-26 10:57:53" itemprop="dateModified" datetime="2019-10-26T10:57:53+08:00">2019-10-26</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>6.9k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>6 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Codeforces-343C-Read-Time-题解"><a href="#Codeforces-343C-Read-Time-题解" class="headerlink" title="Codeforces 343C Read Time 题解"></a><a href="http://codeforces.com/contest/343/problem/C" target="_blank" rel="noopener">Codeforces 343C Read Time</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>在一个无限长的线性磁盘上，有$n$个<strong>独立</strong>的磁头和$m$个需读取的位置$(1\le n,m\le 10^5)$，第$i$个磁头的初始位置为$h_i (1\le h_i\le 10^{10},h_i&lt;h_{i+1})$，第$j$个需读取位置为$p_j (1\le p_j\le 10^{10},p_j&lt;p_{j+1})$，需读取的位置互不相同的。</p>
-<p><img src="https://codeforces.com/predownloaded/82/ea/82ea119f119277c71e28c458bd2febd9134ba7ad.png" alt="n=3,m=4,h=[2,5,6],p=[1,3,6,8]"></p>
-<p>每一个磁头可以花一个单位时间移动到左边或右边的位置，也可以不动。可以有多个磁头在同一位置。每个磁头可以读取无限多个位置。一个位置被至少一个磁头走过后，它就被读取了。特别，一开始时，$h_i (1\le i\le n)$的位置就被读取过了。</p>
-<p>求读取所有需读取位置需要的最少时间。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/10/15/Codeforces-343C-Read-Time-题解/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/Codeforces-343B-Alternating-Current-题解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sir-kay">
-      <meta itemprop="description" content="An OIer">
-      <meta itemprop="image" content="/images/Ulam spiral.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sir-kay">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/10/15/Codeforces-343B-Alternating-Current-题解/" class="post-title-link" itemprop="url">Codeforces 343B Alternating Current 题解</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-15 21:10:04" itemprop="dateCreated datePublished" datetime="2019-10-15T21:10:04+08:00">2019-10-15</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-26 10:57:26" itemprop="dateModified" datetime="2019-10-26T10:57:26+08:00">2019-10-26</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>6.2k</span>
-            </span>
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>6 分钟</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Codeforces-343B-Alternating-Current-题解"><a href="#Codeforces-343B-Alternating-Current-题解" class="headerlink" title="Codeforces 343B Alternating Current 题解"></a><a href="http://codeforces.com/contest/343/problem/B" target="_blank" rel="noopener">Codeforces 343B Alternating Current</a> 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>有两根长度为$n (1\le n\le 10^5)$个单位，两头固定的电线，它们缠绕在一起，给定一个长为$n$，由<code>+</code>和<code>-</code>组成的字符串$s$，其中</p>
-<ul>
-<li><p>若$s_i$为<code>+</code>，则在第$i$个单位长度时，第一根电线在第二根电线上。</p>
-</li>
-<li><p>若$s_i$为<code>-</code>，则在第$i$个单位长度时，第二根电线在第一根电线上。</p>
-</li>
-</ul>
-<p><img src="https://codeforces.com/predownloaded/33/7c/337c85cb33b214e0e8437a4d03da7ec71eb11596.png" alt="n=4,s=&quot;-++-&quot;"></p>
-<p>求不拔出电线且不移动装置时，是否能解开它们。若可以，输出<code>Yes</code>；否则输出<code>No</code>。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/10/15/Codeforces-343B-Alternating-Current-题解/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -1606,7 +1584,7 @@ y-x,\quad &\text{if}\ |x-y|>1 \\
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1714,7 +1692,9 @@ y-x,\quad &\text{if}\ |x-y|>1 \\
         
           
         
-        <span class="site-state-item-count">33</span>
+          
+        
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1810,12 +1790,12 @@ y-x,\quad &\text{if}\ |x-y|>1 \\
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">184k</span>
+    <span title="站点总字数">204k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:47</span>
+    <span title="站点阅读时长">3:06</span>
 </div>
 -->
 
