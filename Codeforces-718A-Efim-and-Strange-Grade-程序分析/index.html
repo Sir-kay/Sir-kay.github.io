@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/sublime-replacement-round/final_32x32x32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sublime-replacement-round/final_32x32x32.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sublime-replacement-round/final_16x16x32.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: false,
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="Codeforces 718A Efim and Strange Grade 程序分析">
+<meta name="keywords" content="DP,数学,贪心,模拟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces 718A Efim and Strange Grade 程序分析">
+<meta property="og:url" content="http://yoursite.com/Codeforces-718A-Efim-and-Strange-Grade-程序分析/index.html">
+<meta property="og:site_name" content="Sir-kay">
+<meta property="og:description" content="Codeforces 718A Efim and Strange Grade 程序分析">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-31T14:56:43.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces 718A Efim and Strange Grade 程序分析">
+<meta name="twitter:description" content="Codeforces 718A Efim and Strange Grade 程序分析">
+  <link rel="alternate" href="/atom.xml" title="Sir-kay" type="application/atom+xml">
+  <link rel="canonical" href="http://yoursite.com/Codeforces-718A-Efim-and-Strange-Grade-程序分析/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Codeforces 718A Efim and Strange Grade 程序分析 | Sir-kay</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sir-kay</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Think Once, Debug More. Think More, Debug Once.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Codeforces-718A-Efim-and-Strange-Grade-程序分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sir-kay">
+      <meta itemprop="description" content="An OIer">
+      <meta itemprop="image" content="/images/Ulam spiral.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sir-kay">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">Codeforces 718A Efim and Strange Grade 程序分析
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-18 15:39:30" itemprop="dateCreated datePublished" datetime="2019-08-18T15:39:30+08:00">2019-08-18</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-31 22:56:43" itemprop="dateModified" datetime="2019-08-31T22:56:43+08:00">2019-08-31</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.7k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Codeforces-718A-Efim-and-Strange-Grade-程序分析"><a href="#Codeforces-718A-Efim-and-Strange-Grade-程序分析" class="headerlink" title="Codeforces 718A Efim and Strange Grade 程序分析"></a><a href="http://codeforces.com/contest/718/problem/A" target="_blank" rel="noopener">Codeforces 718A Efim and Strange Grade</a> 程序分析</h2><a id="more"></a>
+<h3 id="jerry的程序"><a href="#jerry的程序" class="headerlink" title="jerry的程序"></a><strong><em><a href="http://codeforces.com/profile/jerry" target="_blank" rel="noopener">jerry</a></em></strong>的程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">string</span> buf;</span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> at)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	at--;</span><br><span class="line">	<span class="keyword">if</span> (at &lt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		buf = <span class="string">'1'</span> + buf;</span><br><span class="line">		i++;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (buf[at] == <span class="string">'.'</span>) at--;</span><br><span class="line">	buf[at]++;</span><br><span class="line">	<span class="keyword">if</span> (buf[at] == <span class="string">'9'</span>+<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		buf[at] = <span class="string">'0'</span>;</span><br><span class="line">		up(at);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>.sync_with_stdio(<span class="literal">false</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> n, k;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k &gt;&gt; buf;</span><br><span class="line">	<span class="keyword">while</span> (buf[i] != <span class="string">'.'</span>) i++; i++;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; buf.length() &amp;&amp; buf[i] &lt;= <span class="string">'4'</span>) i++;</span><br><span class="line">	<span class="keyword">if</span> (i == buf.length())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; buf &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (;buf[i] != <span class="string">'.'</span> &amp;&amp; k;i--) <span class="keyword">if</span> (buf[i] &gt;= <span class="string">'5'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		buf.resize(i); up(i);</span><br><span class="line">		k--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (buf.back() == <span class="string">'.'</span>) buf.pop_back();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; buf &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先，先找到小数点第一个后大于等于$5$的数位，如果没有的话直接输出原数。</p>
+<p>从那个数位起，从后往前循环到小数点处，如果还当前数位大于等于$5$且有进位的机会，则先把这个数的结尾改成这个位置，因为之后的所有数都会被清零，然后调用up函数进位，如果有$9$的数继续递归，否则退出，如果整数部分首位还要进位，需要在最前面加上$1$。</p>
+<p>最后注意最后一个字符如果是小数点要删去。</p>
+<p>总结：用一个函数来执行进位，如果还有进位机会只需继续调用函数就行了，这样处理起来十分方便。</p>
+<h3 id="izrak的程序"><a href="#izrak的程序" class="headerlink" title="izrak的程序"></a><strong><em><a href="http://codeforces.com/profile/izrak" target="_blank" rel="noopener">izrak</a></em></strong>的程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FO(i,a,b) for (int i = (a); i &lt; (b); i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sz(v) int(v.size())</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200005</span>];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l, t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;l, &amp;t);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s+<span class="number">1</span>);</span><br><span class="line">    s[<span class="number">0</span>] = <span class="string">'0'</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= l; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">'.'</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= l; j++) <span class="keyword">if</span> (s[j] &gt;= <span class="string">'5'</span>) &#123;</span><br><span class="line">                s[j] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">bool</span> roundup = <span class="literal">true</span>;</span><br><span class="line">                t--;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = j<span class="number">-1</span>; k &gt; i; k--) &#123;</span><br><span class="line">                    <span class="comment">// s[k]++</span></span><br><span class="line">                    <span class="keyword">if</span> (roundup) &#123;</span><br><span class="line">                        s[k]++;</span><br><span class="line">                        <span class="keyword">if</span> (s[k] &gt;= <span class="string">'5'</span> &amp;&amp; t) &#123;</span><br><span class="line">                            s[k] = <span class="number">0</span>;</span><br><span class="line">                            t--;</span><br><span class="line">                            roundup = <span class="literal">true</span>;</span><br><span class="line">                        &#125; <span class="keyword">else</span> roundup = <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (roundup) &#123;</span><br><span class="line">                    s[i] = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = i<span class="number">-1</span>; k &gt;= <span class="number">0</span>; k--) &#123;</span><br><span class="line">                        s[k]++;</span><br><span class="line">                        <span class="keyword">if</span> (s[k] &lt;= <span class="string">'9'</span>) <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">else</span> s[k] = <span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (s[<span class="number">0</span>] != <span class="string">'0'</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, s);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, s+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个程序读入时在数字前加上一个前导零，以便处理整数部分首位进位情况。</p>
+<p>第一层循环找到小数点的位置，第二层循环找到小数点后第一位大于等于$5$的数字，第三层循环(最多进位到小数点)，roundup记录是否继续进位，如果进位后还有大于等于$5$的数字且还有进位机会，则继续进位。如果第三层循环结束后，仍需继续进位，则在整数部分进位。进位时每进位一次，就把这一位设置为<code>\0</code>，这样输出时只会输出到第一个<code>\0</code>的位置便结束。</p>
+<p>注意最后需判断如果开始时加上的前导零仍是零，就不能输出。</p>
+<p>总结：用bool变量roundup维护需不需要继续进位，进了位的位置就标为<code>\0</code>，如果在小数点前面进位直接循环处理即可，这样处理起来不容易错。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">__EOF__</div>
+    
+</div>
+
+        
+      </div>
+      
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/DP/" rel="tag"><i class="fa fa-tag"></i> DP</a>
+            
+              <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+            
+              <a href="/tags/贪心/" rel="tag"><i class="fa fa-tag"></i> 贪心</a>
+            
+              <a href="/tags/模拟/" rel="tag"><i class="fa fa-tag"></i> 模拟</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019-Multi-University-Training-Contest-2-1010-Just-Skip-The-Problem-自闭记/" rel="next" title="2019 Multi-University Training Contest 2 1010 Just Skip The Problem 自闭记">
+                  <i class="fa fa-chevron-left"></i> 2019 Multi-University Training Contest 2 1010 Just Skip The Problem 自闭记
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/Ural-1201-Which-Day-Is-It-题解/" rel="prev" title="Ural 1201 Which Day Is It 题解">
+                  Ural 1201 Which Day Is It 题解 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/Ulam spiral.png"
+      alt="Sir-kay">
+  <p class="site-author-name" itemprop="name">Sir-kay</p>
+  <div class="site-description motion-element" itemprop="description">An OIer</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://sir-kay.github.io/" title="Main site &rarr; https://sir-kay.github.io/" rel="noopener" target="_blank"><i class="fa fa-fw fa-home"></i>Main site</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://zh.wikipedia.org/wiki/User:Sir-kay-ken" title="Wikipedia &rarr; https://zh.wikipedia.org/wiki/User:Sir-kay-ken" rel="noopener" target="_blank"><i class="fa fa-fw fa-wikipedia-w"></i>Wikipedia</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Sir-kay" title="GitHub &rarr; https://github.com/Sir-kay" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://git.lug.ustc.edu.cn/sir-kay" title="GitLab &rarr; https://git.lug.ustc.edu.cn/sir-kay" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i>GitLab</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Codeforces-718A-Efim-and-Strange-Grade-程序分析"><span class="nav-number">1.</span> <span class="nav-text">Codeforces 718A Efim and Strange Grade 程序分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jerry的程序"><span class="nav-number">1.1.</span> <span class="nav-text">jerry的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#izrak的程序"><span class="nav-number">1.2.</span> <span class="nav-text">izrak的程序</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sir-kay</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">204k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:06</span>
+</div>
+-->
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script>
+  <script src="/js/motion.js?v=7.3.0"></script>
+
+
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', function() {
+    var gitalk = new Gitalk({
+      clientID: 'bbc9533be7a9c3c28ea1',
+      clientSecret: '7852b4d0e8afebcb03b30d3ba82b01e16116c93f',
+      repo: 'sir-kay.github.io',
+      owner: 'Sir-kay',
+      admin: ['Sir-kay'],
+      id: 'cbab0c33393a959f7e5bbe27e0036ad0',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
