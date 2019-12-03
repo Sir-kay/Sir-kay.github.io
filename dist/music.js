@@ -129,6 +129,12 @@ const ap = new APlayer({
 				artist: 'Azis',
 				url: 'http://music.163.com/song/media/outer/url?id=561493928.mp3',
 				cover: 'https://p1.music.126.net/DKcytrXy6kmBdOW7tAefgg==/109951163299129274.jpg?param=130y130',
+			},
+			{
+				name: "Soviet March",
+				artist: 'James Hannigan,The Skywalker Symphony Chorus',
+				url: 'http://music.163.com/song/media/outer/url?id=5042951.mp3',
+				cover: 'http://p1.music.126.net/9989DWE1MdbpzxSbGX0RaQ==/650910883689775.jpg?param=130y130',
 			}
 		]
 });
