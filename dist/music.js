@@ -135,6 +135,18 @@ const ap = new APlayer({
 				artist: 'James Hannigan,The Skywalker Symphony Chorus',
 				url: 'http://music.163.com/song/media/outer/url?id=5042951.mp3',
 				cover: 'http://p1.music.126.net/9989DWE1MdbpzxSbGX0RaQ==/650910883689775.jpg?param=130y130',
+			},
+			{
+				name: "E.T.",
+				artist: 'Alex Goot',
+				url: 'http://music.163.com/song/media/outer/url?id=1066422.mp3',
+				cover: 'http://p2.music.126.net/oGE-myRKI7f5gDNgMJlVEQ==/6657542906398384.jpg?param=130y130',
+			},
+			{
+				name: "See You Again",
+				artist: 'Kurt Hugo Schneider,Eppic,Alex Goot',
+				url: 'http://music.163.com/song/media/outer/url?id=31719570.mp3',
+				cover: 'http://p1.music.126.net/f2ioXo6ZR6AlR23bT3d-RA==/7818627185875092.jpg?param=130y130',
 			}
 		]
 });
