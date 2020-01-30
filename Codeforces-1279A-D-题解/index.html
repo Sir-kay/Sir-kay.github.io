@@ -57,17 +57,17 @@
   };
 </script>
 
-  <meta name="description" content="Codeforces 1279A~D 题解Codeforces 1279A New Year Garland 题解题意给定$r,g,b$ ($1\le r,g,b\le10^9$)，表示有$r$个字符R，$g$个字符G，$b$个字符B。问可不可能把这些字符排成一行，使得相邻两两字符不相同。 题解令$r\le g\le b$，肯定要把最大的用完，$b$最大为$r+g+1$。 如果$b&amp;gt;r+g+">
+  <meta name="description" content="Codeforces 1279A~D 题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 1279A~D 题解">
 <meta property="og:url" content="http://yoursite.com/Codeforces-1279A-D-题解/index.html">
 <meta property="og:site_name" content="Sir-kay">
-<meta property="og:description" content="Codeforces 1279A~D 题解Codeforces 1279A New Year Garland 题解题意给定$r,g,b$ ($1\le r,g,b\le10^9$)，表示有$r$个字符R，$g$个字符G，$b$个字符B。问可不可能把这些字符排成一行，使得相邻两两字符不相同。 题解令$r\le g\le b$，肯定要把最大的用完，$b$最大为$r+g+1$。 如果$b&amp;gt;r+g+">
+<meta property="og:description" content="Codeforces 1279A~D 题解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-30T11:32:38.629Z">
+<meta property="og:updated_time" content="2020-01-30T11:35:24.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 1279A~D 题解">
-<meta name="twitter:description" content="Codeforces 1279A~D 题解Codeforces 1279A New Year Garland 题解题意给定$r,g,b$ ($1\le r,g,b\le10^9$)，表示有$r$个字符R，$g$个字符G，$b$个字符B。问可不可能把这些字符排成一行，使得相邻两两字符不相同。 题解令$r\le g\le b$，肯定要把最大的用完，$b$最大为$r+g+1$。 如果$b&amp;gt;r+g+">
+<meta name="twitter:description" content="Codeforces 1279A~D 题解">
   <link rel="alternate" href="/atom.xml" title="Sir-kay" type="application/atom+xml">
   <link rel="canonical" href="http://yoursite.com/Codeforces-1279A-D-题解/">
 
@@ -285,7 +285,7 @@
                 
               
 
-              <time title="创建时间：2020-01-30 19:30:59 / 修改时间：19:32:38" itemprop="dateCreated datePublished" datetime="2020-01-30T19:30:59+08:00">2020-01-30</time>
+              <time title="创建时间：2020-01-30 19:30:59 / 修改时间：19:35:24" itemprop="dateCreated datePublished" datetime="2020-01-30T19:30:59+08:00">2020-01-30</time>
             </span>
           
             
@@ -345,7 +345,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Codeforces-1279A-D-题解"><a href="#Codeforces-1279A-D-题解" class="headerlink" title="Codeforces 1279A~D 题解"></a>Codeforces 1279A~D 题解</h1><h2 id="Codeforces-1279A-New-Year-Garland-题解"><a href="#Codeforces-1279A-New-Year-Garland-题解" class="headerlink" title="Codeforces 1279A New Year Garland 题解"></a>Codeforces 1279A New Year Garland 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定$r,g,b$ ($1\le r,g,b\le10^9$)，表示有$r$个字符<code>R</code>，$g$个字符<code>G</code>，$b$个字符<code>B</code>。问可不可能把这些字符排成一行，使得相邻两两字符不相同。</p>
+        <h1 id="Codeforces-1279A-D-题解"><a href="#Codeforces-1279A-D-题解" class="headerlink" title="Codeforces 1279A~D 题解"></a>Codeforces 1279A~D 题解</h1><a id="more"></a>
+<h2 id="Codeforces-1279A-New-Year-Garland-题解"><a href="#Codeforces-1279A-New-Year-Garland-题解" class="headerlink" title="Codeforces 1279A New Year Garland 题解"></a>Codeforces 1279A New Year Garland 题解</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定$r,g,b$ ($1\le r,g,b\le10^9$)，表示有$r$个字符<code>R</code>，$g$个字符<code>G</code>，$b$个字符<code>B</code>。问可不可能把这些字符排成一行，使得相邻两两字符不相同。</p>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>令$r\le g\le b$，肯定要把最大的用完，$b$最大为$r+g+1$。</p>
 <p>如果$b&gt;r+g+1$，那么就会出现这种情况<code>BRBGB ... BRBBBB</code>，不可能完成。</p>
 <p>如果$b\le r+g+1$，用完<code>B</code>后一定能使得$r=g$或$r+1=g$，可行。</p>
