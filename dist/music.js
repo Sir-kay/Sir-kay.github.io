@@ -97,13 +97,6 @@ const ap = new APlayer({
 				lrc: '[00:12.500]Hello sweet grief\n[00:14.220]I know you will be the death of me\n[00:16.730]Feel like the morning after ecstasy\n[00:19.400]I am drowning in an endless sea\n[00:22.970]Hello old friend\n[00:24.850]Here’s the misery that knows no end\n[00:27.280]So I am doing everything I can\n[00:30.160]To make sure I never love again\n[00:35.020]I wish that I did not know\n[00:37.380]Where all broken lovers go\n[00:40.020]I wish that my heart was made of stone\n[00:45.170]Yeah, if I was bulletproof\n[00:48.370]I’d love you black and blue\n[00:50.920]If I was solid like a jewel\n[00:54.750]If I had a diamond heart\n[00:57.880]Oh oh\n[01:00.560]I’d give you all my love\n[01:03.270]If I was unbreakable\n[01:05.220]If I had a diamond heart\n[01:08.380]Oh oh\n[01:11.000]You could shoot me with a gun of gold\n[01:13.840]If I was unbreakable\n[01:15.940]I’d walk straight through the bullet\n[01:18.420]Bendin’ like a tulip\n[01:19.610]Blue-eyed and foolish\n[01:21.040]Never mind the bruises\n[01:22.540]Into the fire\n[01:23.610]Breakin’ through the wires\n[01:25.300]Give you all I’ve got\n[01:26.650](If I had a diamond heart)\n[01:27.720]I’d walk straight through the dagger\n[01:28.990]Never break the pattern\n[01:30.290]Diamonds don’t shatter\n[01:31.620]Beautiful and battered\n[01:33.020]Into the poison\n[01:34.280]Cry you an ocean\n[01:35.700]Give you all I’ve got\n[01:37.980]Goodbye, so long\n[01:39.590]I don’t know if this is right or wrong\n[01:42.100]Am I giving up where I belong?\n[01:44.800]’Cause every station is playing our song\n[01:48.270]Goodbye my love\n[01:50.180]You are everything my dreams are made of\n[01:52.780]You’ll be prince and I’m the crying dove\n[01:55.350]If I only were unbreakable\n[01:59.880]I wish that I did not know\n[02:02.860]Where all broken lovers go\n[02:05.540]I wish that my heart was made of stone\n[02:10.810]Yeah, if I was bulletproof\n[02:13.370]I’d love you black and blue\n[02:16.210]If I was solid like a jewel\n[02:19.980]If I had a diamond heart\n[02:23.180]Oh oh\n[02:25.910]I’d give you all my love\n[02:28.530]If I was unbreakable\n[02:30.570]If I had a diamond heart\n[02:33.570]Oh oh\n[02:36.290]You could shoot me with a gun of gold\n[02:39.050]If I was unbreakable\n[02:41.240]I’d walk straight through the bullet\n[02:43.660]Bendin’ like a tulip\n[02:44.960]Blue-eyed and foolish\n[02:46.330]Never mind the bruises\n[02:47.660]Into the fire\n[02:48.940]Breakin’ through the wires\n[02:50.400]Give you all I’ve got\n[02:51.860](If I had a diamond heart)\n[02:52.940]I’d walk straight through the dagger\n[02:54.290]Never break the pattern\n[02:55.620]Diamonds don’t shatter\n[02:56.920]Beautiful and battered\n[02:58.240]Into the poison\n[02:59.590]Cry you an ocean\n[03:00.930]Give you all I’ve got\n[03:03.110]Lalalala\n[03:12.330]steady is a stone\n[03:14.030]Lalala\n[03:15.990]oh oh\n[03:19.540]I’d give you all my love\n[03:22.030]If I was unbreakable\n[03:24.600]oh oh\n[03:29.840]You could shoot me with a gun of gold\n[03:32.560]If I was unbreakable\n[03:34.680]I’d walk straight through the bullet\n[03:36.960]Bendin’ like a tulip\n[03:38.320]Blue-eyed and foolish\n[03:39.680]Never mind the bruises\n[03:40.980]Into the fire\n[03:42.360]Breakin’ through the wires\n[03:43.740]Give you all I’ve got\n[03:45.450](If I had a diamond heart)\n[03:46.210]I’d walk straight through the dagger\n[03:47.880]Never break the pattern\n[03:49.010]Diamonds don’t shatter\n[03:50.270]Beautiful and battered\n[03:51.630]Into the poison\n[03:52.920]Cry you an ocean\n[03:54.440]Give you all I’ve got'
 			},
 			{
-				name: "Routine",
-				artist: 'Alan Walker',
-				url: 'http://music.163.com/song/media/outer/url?id=447916006.mp3',
-				cover: 'http://imge.kugou.com/stdmusic/240/20161223/20161223000536443726.jpg',
-				lrc: '[00:00.00]纯音乐'
-			},
-			{
 				name: "Sing Me To Sleep",
 				artist: 'Alan Walker,Iselin Solheim',
 				url: 'http://music.163.com/song/media/outer/url?id=415792222.mp3',
@@ -143,6 +136,20 @@ const ap = new APlayer({
 				artist: 'Alan Walker',
 				url: 'http://music.163.com/song/media/outer/url?id=31311107.mp3',
 				cover: 'http://imge.kugou.com/stdmusic/240/20150720/20150720200727676536.jpg',
+				lrc: '[00:00.00]纯音乐'
+			},
+			{
+				name: "Routine",
+				artist: 'Alan Walker',
+				url: 'http://music.163.com/song/media/outer/url?id=447916006.mp3',
+				cover: 'http://imge.kugou.com/stdmusic/240/20161223/20161223000536443726.jpg',
+				lrc: '[00:00.00]纯音乐'
+			},
+			{
+				name: "Sky",
+				artist: 'Alan Walker,Alex Skrindo',
+				url: 'http://music.163.com/song/media/outer/url?id=482988841.mp3',
+				cover: 'http://p1.music.126.net/9jjN5Y6b8X0tPb8_RfmIeA==/109951164355709224.jpg?param=130y130',
 				lrc: '[00:00.00]纯音乐'
 			},
 			{
@@ -194,20 +201,6 @@ const ap = new APlayer({
 				url: 'http://music.163.com/song/media/outer/url?id=513704704.mp3',
 				cover: 'http://imge.kugou.com/stdmusic/240/20190114/20190114202321451489.jpg',
 				lrc: '[by:妞_-来给爺唱两句]\n[ml:1.0]\n[00:00.00]\n[00:06.28]Turn it up\n[00:13.72]Somebody save your soul\n[00:15.08]cause you\'ve been sinning\n[00:15.97]in the city I know\n[00:17.32]Too many troubles all these lovers\n[00:19.27]got you losin\' control\n[00:20.98]You\'re like a drug to me a luxury\n[00:22.87]my sugar and gold\n[00:24.36]I want the good life\n[00:25.50]Every good night\n[00:26.43]you\'re a hot one to hold\n[00:29.18]Cause you don\'t even know\n[00:30.86]I can make your hands clap\n[00:33.75]Said I can make your hands clap\n[00:37.62]Somebody save your soul\n[00:39.08]cause you\'ve been sinning\n[00:40.02]in the city I know\n[00:41.54]Too many troubles all these lovers\n[00:43.33]got you losin\' control\n[00:44.91]You\'re like a drug to me a luxury\n[00:46.88]my sugar and gold\n[00:48.34]I want your *** and your affection\n[00:50.98]when I\'m holding you close\n[00:53.38]Cause you don\'t even know\n[00:54.95]I can make your hands clap\n[00:58.10]Said I can make your hands clap\n[01:01.29]Every night when the stars come out\n[01:04.60]Am I the only living soul around\n[01:08.28]Need to believe you could hold me down\n[01:11.60]Cause I\'m in need of\n[01:13.24]something good right now\n[01:15.24]We could be screaming till\n[01:16.73]the sun comes out\n[01:18.66]And when we wake we be the only sound\n[01:22.36]Get off my knees\n[01:23.52]and say a prayer to change vows \n[01:26.34]Bet I can make your hands clap\n[01:35.12]Bet I can make your hands clap\n[01:39.56]Turn it up\n[01:41.98]Bet I can make your hands clap\n[01:44.11]My fresh is searching for your worst\n[01:45.73]and rest don\'t ever deny\n[01:47.47]I\'m like a stranger give me danger\n[01:49.30]All your wrongs and your rights\n[01:50.75]Secrets on broadway to the freeway\n[01:52.65]you\'re a keeper of crimes\n[01:54.17]Feel no conviction grapes of wrath\n[01:56.08]can only sweeten your wine\n[01:59.18]But you don\'t even know\n[02:00.78]I can make your hands clap\n[02:04.14]Said I can make your hands clap\n[02:07.04]Every night when the stars come out\n[02:10.45]Am I the only living soul around\n[02:13.99]Need to believe you could hold me down\n[02:17.44]Cause I\'m in need of\n[02:18.88]something good right now\n[02:21.06]We could be screaming till\n[02:22.66]the sun comes out\n[02:24.52]And when we wake we be the only sound\n[02:28.12]Get off my knees\n[02:29.41]and say a prayer to change vows\n[02:32.05]Bet I can make your hands clap\n[02:40.94]Bet I can make your hands clap\n[02:47.82]Bet I can make your hands clap\n[02:54.77]Bet I can make your hands clap\n[03:01.43]So can I get a hand clap\n[03:03.30]\n[03:03.30]'
-			},
-			{
-				name: "盗将行",
-				artist: '花粥,马雨阳',
-				url: 'http://music.163.com/song/media/outer/url?id=574566207.mp3',
-				cover: 'http://p1.music.126.net/-qHPT3rhxDlu5zQV9NcQ-A==/109951163555860423.jpg?param=130y130',
-				lrc: '[by:癫癫_]\n[ti:盗将行]\n[ar:花粥 / 马雨阳]\n[al:粥请客（二）]\n\n[00:08.825] 编曲/混音：马雨阳\n[00:18.217] 劫过九重城关\n[00:21.184] 我座下马正酣\n[00:23.656] 看那轻飘飘的衣摆\n[00:26.975] 趁擦肩把裙掀\n[00:29.877] 踏遍三江六岸\n[00:33.210] 借刀光做船帆\n[00:35.945] 任露水浸透了短衫\n[00:39.393] 大盗睥睨四野\n[00:43.735] 枕风宿雪多年\n[00:47.194] 我与虎谋早餐\n[00:49.688] 拎着钓叟的鱼弦\n[00:53.357] 问卧龙几两钱\n[00:55.874] 蜀中大雨连绵\n[00:59.291] 关外横尸遍野\n[01:02.138] 你的笑像一条恶犬\n[01:05.303] 撞乱了我心弦\n[01:23.009] 谈花饮月赋闲\n[01:25.771] 这春宵艳阳天\n[01:28.275] 待到梦醒时分睁眼\n[01:31.770] 铁甲寒意凛冽\n[01:34.304] 夙愿只隔一箭\n[01:37.704] 故乡近似天边\n[01:40.608] 不知何人浅唱弄弦\n[01:44.009] 我彷徨不可前\n[01:51.313] 枕风宿雪多年\n[01:54.645] 我与虎谋早餐\n[01:57.337] 拎着钓叟的鱼弦\n[02:00.841] 问卧龙几两钱\n[02:03.517] 蜀中大雨连绵\n[02:07.049] 关外横尸遍野\n[02:09.771] 你的笑像一条恶犬\n[02:13.137] 撞乱我心弦\n[02:15.916] 烽烟万里如衔\n[02:19.290] 掷群雄下酒宴\n[02:22.002] 谢绝策勋十二转\n[02:25.539] 想为你窃玉簪\n[02:28.204] 入巷间吃汤面\n[02:31.690] 笑看窗边飞雪\n[02:34.340] 取腰间明珠弹山雀\n[02:37.721] 立枇杷于庭前\n[02:45.748] 入巷间吃汤面\n[02:49.694] 笑看窗边飞雪\n[02:53.209] 取腰间明珠弹山雀\n[02:57.041] 立枇杷于庭前'
-			},
-			{
-				name: "出山",
-				artist: '花粥,王胜男',
-				url: 'http://music.163.com/song/media/outer/url?id=1313354324.mp3',
-				cover: 'http://p1.music.126.net/xUAfdMHdXhu3BmO4g8nOYA==/109951163573311341.jpg?param=130y130',
-				lrc: '[by:GoodTM]\n[00:10.43]\n[00:11.12]在夜半三更过天桥从来不敢回头看\n[00:15.86]白日里是车水马龙此时脚下是忘川\n[00:21.30]我独自走过半山腰山间野狗来作伴\n[00:25.19]层林尽染百舸流秋风吹过鬼门关\n[00:29.81]一瞬三年五载 品粗茶 食淡饭\n[00:34.49]六界八荒四海 无人与我来叫板\n[00:39.19]人间荒唐古怪 竹林外 有书斋\n[00:43.78]匿于此地畅快 偏来者不善善者不来\n[00:50.85]是我装模作样在瞎掰\n[00:55.18]还是他们本就心怀鬼胎\n[00:57.82]有人不知悔改 迷雾中混淆黑白\n[01:02.46]在情怀里市侩 旁人不敢来拆穿\n[01:07.17]看似时来运转 实则在顶风作案\n[01:11.73]待曲终又人散 这一出还有谁在围观\n[01:16.79]在凡尘修炼二十载听闻水能滴石穿\n[01:21.07]帝王豪杰风云变幻敌不过桑田沧海\n[01:25.85]我不关心谁的江山只眷恋两小无猜\n[01:30.36]兴风作浪不稀罕只身固守峨眉山\n[01:35.14]一瞬三年五载 品粗茶 食淡饭\n[01:39.73]六界八荒四海 无人与我来叫板\n[01:44.33]人间荒唐古怪 竹林外 有书斋\n[01:49.11]匿于此地畅快 偏来者不善善者不来\n[01:56.00]是我装模作样在瞎猜\n[02:00.39]还是他们本就心怀鬼胎\n[02:03.15]有人不知悔改 迷雾中混淆黑白\n[02:07.73]在情怀里市侩 旁人不敢来拆穿\n[02:12.39]看似时来运转 实则在顶风作案\n[02:17.06]待曲终又人散 这一出还有谁在围观\n[02:21.82]静悄悄配唠唠叨叨\n[02:24.00]随便瞧瞧我凑凑热闹\n[02:26.34]客串也别太潦草\n[02:28.70]吃的生蚝要蘸个酱料\n[02:31.00]悄悄你唠唠叨叨\n[02:33.30]随便瞧瞧你凑的热闹\n[02:35.68]听到你做个记号\n[02:37.84]请装进书包别四处招摇\n[02:40.29]有人迷途知返\n[02:45.08]便是苦尽甘来\n[02:50.00]一瞬三年五载\n[02:54.15]这曲终又人散\n[03:33.63]\n[03:33.95]合作音乐人：王胜男\n[03:34.13]音乐制作：BachBeats\n[03:34.31]录音师：种旭\n[03:34.48]混音／母带处理：钻石狗音乐工作室（北京）\n[03:34.82]专辑封面设计：姜小海\n[03:35.25]'
 			},
 			{
 				name: "Hop",
