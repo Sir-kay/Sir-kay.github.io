@@ -20,6 +20,13 @@ const ap = new APlayer({
 				lrc: '[00:10.72]You were the shadow to my light\n[00:14.01]Did you feel us\n[00:17.75]Another Start\n[00:19.72]You fade away\n[00:21.68]Afraid our aim is out of sight\n[00:24.56]Wanna see us\n[00:28.00]Alive\n[00:30.89]Where are you now\n[00:36.20]Where are you now\n[00:41.50]Where are you now\n[00:44.34]Was it all in my fantasy\n[00:46.82]Where are you now\n[00:49.56]Were you only imaginary\n[00:53.51]Where are you now\n[00:56.86]Atlantis\n[00:58.82]Under the sea\n[01:01.49]Under the sea\n[01:04.34]Where are you now\n[01:06.74]Another dream\n[01:10.02]The monster\'s running wild inside of me\n[01:14.22]I\'m faded\n[01:19.66]I\'m faded\n[01:23.44]So lost, I\'m faded\n[01:30.22]I\'m faded\n[01:34.20]So lost, I\'m faded\n[01:37.53]These shallow waters never met\n[01:40.47]What i needed\n[01:44.25]I\'m letting go\n[01:46.12]A deeper dive\n[01:48.12]Eternal silence of the sea\n[01:51.07]I\'m breathing\n[01:54.90]Alive\n[01:57.57]Where are you now\n[02:02.89]Where are you now\n[02:08.40]Under the bright but faded lights\n[02:10.87]You set my heart on fire\n[02:13.44]Where are you now\n[02:16.13]Where are you now\n[02:18.85]Another dream\n[02:22.24]Another dream\n[02:24.85]Another dream\n[02:27.50]Another dream\n[02:30.93]Where are you now\n[02:34.22]Atlantis\n[02:36.25]Under the sea\n[02:38.83]Under the sea\n[02:41.56]Where are you now\n[02:44.17]Another dream\n[02:47.46]The monster\'s running wild inside of me\n[02:51.45]I\'m faded\n[02:56.92]I\'m faded\n[03:00.90]So lost, I\'m faded\n[03:07.50]I\'m faded\n[03:11.36]So lost, I\'m faded'
 			},
 			{
+				name: "Levels (Radio Edit)",
+				artist: 'Avicii',
+				url: 'http://music.163.com/song/media/outer/url?id=16345145.mp3',
+				cover: 'http://p2.music.126.net/7MY0Iqo9PR_vtTKq74rvKw==/109951164313319649.jpg?param=130y130',
+				lrc: '[01:24.570]Oh, sometimes\n[01:27.500]I get a good feeling, yeah\n[01:32.510]Get a feeling that I never, never, never, never had before, no no\n[01:36.910]I get a good feeling, yeah\n[01:39.760]Oh, sometimes\n[01:42.710]I get a good feeling, yeah\n[01:47.700]Get a feeling that I never, never, never, never had before, no no\n[01:52.130]I get a good feeling, yeah'
+			},
+			{
 				name: "Alone, Pt. II",
 				artist: 'Alan Walker,Ava Max',
 				url: 'http://music.163.com/song/media/outer/url?id=1411973459.mp3',
