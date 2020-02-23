@@ -27,6 +27,20 @@ const ap = new APlayer({
 				lrc: '[00:08.52]Talk to me\n[00:12.55]Spill the secrets you\'ve been keeping\n[00:16.86]Life cuts deep\n[00:20.85]Let me help pick up the pieces\n[00:24.39]\n[00:24.40]You\'re not alone, I\'m by your side\n[00:26.70]Don\'t you know, don\'t you know\n[00:28.04]I\'ll walk through fire with you\n[00:30.08]I\'ll walk through fire\n[00:32.62]No matter what, I\'ll make it right\n[00:34.95]Don\'t you know, don\'t you know\n[00:36.17]I\'ll walk through fire with you\n[00:38.29]I\'ll walk through fire\n[00:39.78]\n[00:40.18]I\'m not an angel, I\'m not a saint\n[00:44.25]I\'ve been a closed book full of mistakes\n[00:48.39]But when you\'re broken, when you\'re in pain\n[00:52.50]Oooh, ooh\n[00:55.88]I\'ll walk through fire with you\n[00:58.19]\n[01:04.18]I\'ll walk through fire\n[01:08.34]I\'ll walk through fire with you\n[01:12.39]I\'ll walk through fire\n[01:14.08]\n[01:14.79]You know I\n[01:18.95]Don\'t pretend to be your savior\n[01:22.75]But let me in, yeah\n[01:26.89]I promise that nobody can break us\n[01:30.76]\n[01:30.58]You\'re not alone, I\'m by your side\n[01:32.89]Don\'t you know, don\'t you know\n[01:34.19]I\'ll walk through fire with you\n[01:36.19]I\'ll walk through fire\n[01:38.83]No matter what, I\'ll make it right\n[01:41.11]Don\'t you know, don\'t you know\n[01:42.41]I\'ll walk through fire with you\n[01:44.47]I\'ll walk through fire\n[01:46.03]\n[01:46.33]I\'m not an angel, I\'m not a saint\n[01:50.43]I\'ve been a closed book full of mistakes\n[01:54.55]But when you\'re broken, when you\'re in pain\n[01:58.75]Oooh, ooh\n[02:02.05]I\'ll walk through fire with you\n[02:04.19]\n[02:06.23]I\'ll walk through fire with you\n[02:10.38]I\'ll walk through fire\n[02:14.50]I\'ll walk through fire with you\n[02:18.63]I\'ll walk through fire with you\n[02:20.95]\n[02:28.52]You\'re not alone, I\'m by your side\n[02:30.83]Don\'t you know, don\'t you know\n[02:32.09]I\'ll walk through fire with you\n[02:34.10]I\'ll walk through fire\n[02:35.66]\n[02:36.03]I\'m not an angel, I\'m not a saint\n[02:40.11]I\'ve been a closed book full of mistakes\n[02:44.23]But when you\'re broken, when you\'re in pain\n[02:48.39]Oooh, ooh\n[02:51.79]I\'ll walk through fire with you\n[02:54.01]\n[02:55.92]I\'ll walk through fire with you\n[03:00.11]I\'ll walk through fire\n[03:04.14]I\'ll walk through fire with you\n[03:08.28]I\'ll walk through fire with you'
 			},
 			{
+				name: "Anywhere I Go",
+				artist: 'Vicetone',
+				url: 'http://music.163.com/song/media/outer/url?id=420069116.mp3',
+				cover: 'http://p1.music.126.net/kumOKGOtM3FzMUPZZRbkOQ==/3437073356535827.jpg?param=130y130',
+				lrc: '[00:04.75]作曲：Victor Pool/Ruben Den Boer/Erin Beck/Whitney Phillips\n[00:05.75]作词：Victor Pool/Ruben Den Boer/Erin Beck/Whitney Phillips\n[00:09.75]There\'s a part of me\n[00:11.80]That\'s lying underneath\n[00:14.01]That wants to see the darker side\n[00:18.64]Nothing I won\'t try\n[00:20.85]Once or maybe twice\n[00:23.17]Are you down to take the ride?\n[00:25.93]\n[00:27.03]Living so naive, never going deep\n[00:31.48]Ain\'t a pill I could swallow, swallow\n[00:35.89]Taking off the edge, all I\'m asking is\n[00:40.29]Will you be there to follow?\n[00:43.59]So down, hit ground when I\'m going low\n[00:47.97]Tell me anywhere I go you will follow\n[00:52.53]Go round, all out when I lose control\n[00:57.02]Tell me anywhere I go you will follow\n[01:14.79]Tell me anywhere I go you will follow\n[01:23.60]Tell me anywhere I go you will follow\n[01:32.35]Tell me anywhere I go you will follow\n[01:36.97]\n[01:38.35]Don\'t wanna put this wrong\n[01:40.55]I know I\'m coming strong\n[01:42.68]But I can\'t get this off my mind\n[01:47.01]Imagine you and me\n[01:49.23]Or you and me and she\n[01:51.55]Where do you go when you run wild?\n[01:54.67]\n[01:55.76]Living so naive, never going deep\n[02:00.23]Ain\'t a pill I could swallow, swallow\n[02:04.67]Taking off the edge, all I\'m asking is\n[02:09.21]Will you be there to follow?\n[02:12.37]So down, hit ground when I\'m going low\n[02:16.78]Tell me anywhere I go you will follow\n[02:21.38]Go round, all out when I lose control\n[02:25.75]Tell me anywhere I go you will follow\n[02:34.69]Tell me anywhere I go you will follow\n[02:43.61]Tell me anywhere I go you will follow\n[03:01.29]Tell me anywhere I go you will follow'
+			},
+			{
+				name: "Way Back",
+				artist: 'Vicetone,Cozi Zuehlsdorff',
+				url: 'http://music.163.com/song/media/outer/url?id=543987451.mp3',
+				cover: 'http://p2.music.126.net/sOfRLrOCx-THntvvnlimCg==/109951163311532318.jpg?param=130y130',
+				lrc: '[by:hondoes]\n[00:07.51]Playing with temptation, searching for salvation\n[00:12.08]Can we find our way back, way back?\n[00:16.49]Caught up in confusion, need a resolution\n[00:20.95]Can we find our way back, way back?\n[00:24.95]\n[00:25.86]No more running, no more running, no more chasing\n[00:30.27]No more running, now I\'m running out of patience\n[00:34.18]Caught up in confusion, need a resolution\n[00:38.66]Can we find our way back, way back?\n[00:42.66]\n[01:05.38]Can we find our way back, way back?\n[01:23.07]Can we find our way back, way back?\n[01:27.43]\n[01:27.52]Playing with temptation, searching for salvation\n[01:32.06]Can we find our way back, way back?\n[01:36.40]Caught up in confusion, need a resolution\n[01:40.92]Can we find our way back, way back?\n[01:44.81]\n[01:45.94]No more running, no more running, no more chasing\n[01:50.34]No more running, now I\'m running out of patience\n[01:54.21]Caught up in confusion, need a resolution\n[01:58.66]Can we find our way back, way back?\n[02:03.60]\n[02:16.37]Can we find our way back, way back?\n[02:21.30]\n[02:30.36]No more running, no more running, no more chasing\n[02:34.82]No more running, now I\'m running out of patience\n[02:38.64]Caught up in confusion, need a resolution\n[02:43.15]Can we find our way back, way back?\n[02:48.05]\n[03:00.97]Can we find our way back, way back?\n[03:18.73]Can we find our way back, way back?'
+			},
+			{
 				name: "Wake Me Up",
 				artist: 'Avicii,Aloe Blacc',
 				url: 'http://music.163.com/song/media/outer/url?id=27713920.mp3',
@@ -53,6 +67,20 @@ const ap = new APlayer({
 				url: 'http://music.163.com/song/media/outer/url?id=29771146.mp3',
 				cover: 'http://p1.music.126.net/6FE-03uc2xJJWcE-aKIejw==/3246857838267604.jpg?param=130y130',
 				lrc: '[by:已逝的过往]\n[00:02.400]Hey, once upon a younger year\n[00:04.500]When all our shadows disappeared\n[00:06.280]The animals inside came out to play\n[00:09.940]Hey, When face to face with all our fears\n[00:12.300]Learned our lessons through the tears\n[00:13.880]Make memories we knew would never fade\n[00:17.270]One day my father he told me\n[00:19.440]Son, don\'t let this slip away\n[00:21.560]He took me in his arms,I heard him say\n[00:24.920]When you get older\n[00:26.360]Your wild heart will live for younger days\n[00:29.420]Think of me if ever you\'re afraid\n[00:32.490]He said, one day you\'ll leave this world behind\n[00:36.240]So live a life you will remember\n[00:40.040]My father told me when I was just a child\n[00:43.890]These are the nights that never die\n[00:47.240]My father told me\n[01:18.700]When thunder clouds start pouring down\n[01:20.830]Light a fire they can\'t put out\n[01:22.760]Carve your name into those shinning stars\n[01:25.840]He said go adventure far beyond these shores\n[01:28.490]Don\'t forsake this life of yours\n[01:30.120]I\'ll guide you home no matter where you are\n[01:33.490]One day my father he told me\n[01:35.690]Son, don\'t let this slip away\n[01:37.710]When I was just a kid, I heard him say\n[01:41.120]When you get older\n[01:42.480]Your wild heart will live for younger days\n[01:45.540]Think of me if ever you\'re afraid\n[01:48.650]He said, one day you\'ll leave this world behind\n[01:52.450]So live a life you will remember\n[01:56.320]My father told me when I was just a child\n[02:00.110]These are the nights that never die\n[02:03.350]My father told me\n[02:15.300]These are the nights that never die\n[02:18.760]My father told me\n[02:49.150]My father told me'
+			},
+			{
+				name: "Sunburst",
+				artist: 'Tobu,Itro',
+				url: 'http://music.163.com/song/media/outer/url?id=28830411.mp3',
+				cover: 'http://p2.music.126.net/KQ_MoqD1NhL2-CndmKd-rA==/109951164239509808.jpg?param=130y130',
+				lrc: '[00:00.00]纯音乐'
+			},
+			{
+				name: "Life",
+				artist: 'Tobu',
+				url: 'http://music.163.com/song/media/outer/url?id=28830410.mp3',
+				cover: 'http://p1.music.126.net/eYImdF5hXSr4loEwiu5t9A==/109951164239506459.jpg?param=130y130',
+				lrc: '[00:00.00]纯音乐'
 			},
 			{
 				name: "Faded",
@@ -200,6 +228,20 @@ const ap = new APlayer({
 				url: 'http://music.163.com/song/media/outer/url?id=482988841.mp3',
 				cover: 'http://p1.music.126.net/9jjN5Y6b8X0tPb8_RfmIeA==/109951164355709224.jpg?param=130y130',
 				lrc: '[00:00.00]纯音乐'
+			},
+			{
+				name: "BOOM",
+				artist: 'Tiësto,Sevenn',
+				url: 'http://music.163.com/song/media/outer/url?id=474581010.mp3',
+				cover: 'http://p2.music.126.net/9Ciy8nTq4snpxdRiFC7gJQ==/17975915602766625.jpg?param=130y130',
+				lrc: '[00:17.73]Bring that ass back like a boom boom boom boom\n[00:19.58]Boom boom boom boom boom boom boom boom……\n[00:43.05]Never give a **********\n[00:44.88]Boom boom boom boom boom boom boom\n[01:19.83]Bring that ass back like a boom boom boom boom\n[01:22.00]Boom boom boom boom……\n[01:41.05]Bring that ass back like a boom boom boom boom\n[01:43.42]Boom boom boom boom boom boom boom boom……\n[02:06.83]Never give a **********\n[02:09.02]Boom boom boom boom boom boom boom boom……'
+			},
+			{
+				name: "Creep",
+				artist: 'Gamper & Dadoni,Ember Island',
+				url: 'http://music.163.com/song/media/outer/url?id=485612576.mp3',
+				cover: 'http://p1.music.126.net/H0VQBvES9ijYpu4lhZIYPw==/18712588395060972.jpg?param=130y130',
+				lrc: '[by:小陀螺Tony]\n[00:15.14]Went away before\r\n[00:18.28]Couldn\'t look you in the eye\r\n[00:22.26]You\'re just like an angel\r\n[00:25.99]Your skin makes me cry\r\n[00:29.93]You float like a feather\r\n[00:33.77]In a beautiful world\r\n[00:37.45]I wish I was special\r\n[00:41.19]You\'re so very special\r\n[00:45.52]But I\'m a creep, I\'m a weirdo\r\n[00:52.65]What the hell am I doing here?\r\n[00:56.78]I don\'t belong here\r\n[01:12.03]I don\'t belong here\r\n[01:14.62]\r\n[01:17.75]I don\'t care if it hurts\r\n[01:21.23]I went out of control\r\n[01:25.28]I want a perfect body\r\n[01:29.11]I want a perfect soul\r\n[01:33.10]I want you to know that\r\n[01:36.83]When I\'m not around\r\n[01:40.61]I wish I was special\r\n[01:44.25]You\'re so very special\r\n[01:46.89]\r\n[01:48.44]But I\'m a creep, I\'m a weirdo\r\n[01:55.55]What the hell am I doing here?\r\n[01:59.74]I don\'t belong here\r\n[02:15.33]I don\'t belong here\r\n[02:30.32]I don\'t belong here\r\n[02:34.62]But I\'m a creep, I\'m a weirdo\r\n[02:41.54]What the hell am I doing here?\r\n[02:45.63]I don\'t belong here'
 			},
 			{
 				name: "Revenge (Minecraft Song)",
