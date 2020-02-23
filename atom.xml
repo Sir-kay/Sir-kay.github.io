@@ -105,9 +105,9 @@
       <category term="Codeforces" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Codeforces/"/>
     
     
-      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="二分" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -346,9 +346,9 @@ y-x,\quad &amp;\text{if}\ |x-y|&gt;1 \\
       <category term="Codeforces" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Codeforces/"/>
     
     
-      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="二分" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="双指针" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
     
@@ -482,9 +482,9 @@ y-x,\quad &amp;\text{if}\ |x-y|&gt;1 \\
       <category term="Codeforces" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/Codeforces/"/>
     
     
-      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="二分" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     

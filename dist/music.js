@@ -13,6 +13,13 @@ const ap = new APlayer({
 		lrcType: 1,
 		audio: [
 			{
+				name: "Dance Monkey",
+				artist: 'Tones and I',
+				url: 'http://music.163.com/song/media/outer/url?id=1364343491.mp3',
+				cover: 'http://p1.music.126.net/p9Eie-x1qVgvX73W8y6KgQ==/109951164272074028.jpg?param=130y130',
+				lrc: '[00:09.03]They say, \"Oh my God, I see the way you shine\n[00:13.90]Take your hands, my dear, and place them both in mine\"\n[00:18.50]You know you stopped me dead while I was passing by\n[00:23.66]And now I beg to see you dance just one more time\n[00:27.44]\n[00:28.16]Ooh, I see you, see you, see you every time\n[00:33.62]And oh my, I, I like your style\n[00:38.30]You, you make me, make me, make me wanna cry\n[00:43.35]And now I beg to see you dance just one more time\n[00:47.15]\n[00:47.66]So they say\n[00:48.95]Dance for me, dance for me, dance for me, oh-oh-oh\n[00:53.16]I’ve never seen anybody do the things you do before\n[00:57.47]They say\n[00:58.73]Move for me, move for me, move for me, ayy-ayy-ayy\n[01:02.95]And when you’re done, I\'ll make you do it all again\n[01:06.69]\n[01:07.73]I said, \"Oh my God, I see you walking by\n[01:12.78]Take my hands, my dear, and look me in my eyes\"\n[01:17.41]Just like a monkey, I\'ve been dancin’ my whole life\n[01:22.57]But you just beg to see me dance just one more time\n[01:26.37]\n[01:27.02]Ooh, I see you, see you, see you every time\n[01:32.33]And oh my, I, I like your style\n[01:36.75]You, you make me, make me, make me wanna cry\n[01:42.04]And now I beg to see you dance just one more time\n[01:45.90]\n[01:46.41]So they say\n[01:47.75]Dance for me, dance for me, dance for me, oh-oh-oh\n[01:51.95]I’ve never seen anybody do the things you do before\n[01:56.21]They say\n[01:57.54]Move for me, move for me, move for me, ayy-ayy-ayy\n[02:01.69]And when you\'re done, I\'ll make you do it all again\n[02:06.26]They say\n[02:07.32]Dance for me, dance for me, dance for me, oh-oh-oh, oh-oh, oh-oh\n[02:11.51]I’ve never seen anybody do the things you do before\n[02:15.92]They say\n[02:17.11]Move for me, move for me, move for me, ayy-ayy-ayy\n[02:21.29]And when you\'re done, I\'ll make you do it all again\n[02:25.50]\n[02:26.99]Ooh, ooh, ooh, ooh, ooh\n[02:34.94]Oh-oh, oh-oh, oh\n[02:36.87]Ooh, ooh, ooh, ooh, ooh-ooh\n[02:43.69]Ooh, ah-ah, ah-ah\n[02:45.49]\n[02:45.85]They say\n[02:46.59]Dance for me, dance for me, dance for me, oh-oh-oh\n[02:50.70]I’ve never seen anybody do the things you do before\n[02:55.06]They say\n[02:56.27]Move for me, move for me, move for me, ayy-ayy-ayy\n[03:00.44]And when you’re done, I’ll make you do it all again\n[03:04.78]They say\n[03:06.00]Dance for me, dance for me, dance for me, oh-oh-oh, oh-oh, oh-oh\n[03:10.22]I’ve never seen anybody do the things you do before\n[03:14.59]They say\n[03:15.85]Move for me, move for me, move for me, ayy-ayy-ayy\n[03:20.03]And when you’re done, I\'ll make you do it all again\n[03:24.48]All again'
+			},
+			{
 				name: "Faded",
 				artist: 'Alan Walker,Iselin Solheim',
 				url: 'http://music.163.com/song/media/outer/url?id=36990266.mp3',
@@ -24,7 +31,7 @@ const ap = new APlayer({
 				artist: 'Avicii',
 				url: 'http://music.163.com/song/media/outer/url?id=16345145.mp3',
 				cover: 'http://p2.music.126.net/7MY0Iqo9PR_vtTKq74rvKw==/109951164313319649.jpg?param=130y130',
-				lrc: '[01:24.570]Oh, sometimes\n[01:27.500]I get a good feeling, yeah\n[01:32.510]Get a feeling that I never, never, never, never had before, no no\n[01:36.910]I get a good feeling, yeah\n[01:39.760]Oh, sometimes\n[01:42.710]I get a good feeling, yeah\n[01:47.700]Get a feeling that I never, never, never, never had before, no no\n[01:52.130]I get a good feeling, yeah'
+				lrc: '[01:24.570]Oh, sometimes\n[01:27.500]I get a good feeling, yeah\n[01:32.510]Get a feeling that I never, never, never, never had before, no no no\n[01:36.910]I get a good feeling, yeah\n[01:39.760]Oh, sometimes\n[01:42.710]I get a good feeling, yeah\n[01:47.700]Get a feeling that I never, never, never, never had before, no no no\n[01:52.130]I get a good feeling, yeah'
 			},
 			{
 				name: "Alone, Pt. II",
