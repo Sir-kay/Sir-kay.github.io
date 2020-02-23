@@ -230,18 +230,32 @@ const ap = new APlayer({
 				lrc: '[00:00.00]纯音乐'
 			},
 			{
-				name: "BOOM",
-				artist: 'Tiësto,Sevenn',
-				url: 'http://music.163.com/song/media/outer/url?id=474581010.mp3',
-				cover: 'http://p2.music.126.net/9Ciy8nTq4snpxdRiFC7gJQ==/17975915602766625.jpg?param=130y130',
-				lrc: '[00:17.73]Bring that ass back like a boom boom boom boom\n[00:19.58]Boom boom boom boom boom boom boom boom……\n[00:43.05]Never give a **********\n[00:44.88]Boom boom boom boom boom boom boom\n[01:19.83]Bring that ass back like a boom boom boom boom\n[01:22.00]Boom boom boom boom……\n[01:41.05]Bring that ass back like a boom boom boom boom\n[01:43.42]Boom boom boom boom boom boom boom boom……\n[02:06.83]Never give a **********\n[02:09.02]Boom boom boom boom boom boom boom boom……'
-			},
-			{
 				name: "Creep",
 				artist: 'Gamper & Dadoni,Ember Island',
 				url: 'http://music.163.com/song/media/outer/url?id=485612576.mp3',
 				cover: 'http://p1.music.126.net/H0VQBvES9ijYpu4lhZIYPw==/18712588395060972.jpg?param=130y130',
 				lrc: '[by:小陀螺Tony]\n[00:15.14]Went away before\r\n[00:18.28]Couldn\'t look you in the eye\r\n[00:22.26]You\'re just like an angel\r\n[00:25.99]Your skin makes me cry\r\n[00:29.93]You float like a feather\r\n[00:33.77]In a beautiful world\r\n[00:37.45]I wish I was special\r\n[00:41.19]You\'re so very special\r\n[00:45.52]But I\'m a creep, I\'m a weirdo\r\n[00:52.65]What the hell am I doing here?\r\n[00:56.78]I don\'t belong here\r\n[01:12.03]I don\'t belong here\r\n[01:14.62]\r\n[01:17.75]I don\'t care if it hurts\r\n[01:21.23]I went out of control\r\n[01:25.28]I want a perfect body\r\n[01:29.11]I want a perfect soul\r\n[01:33.10]I want you to know that\r\n[01:36.83]When I\'m not around\r\n[01:40.61]I wish I was special\r\n[01:44.25]You\'re so very special\r\n[01:46.89]\r\n[01:48.44]But I\'m a creep, I\'m a weirdo\r\n[01:55.55]What the hell am I doing here?\r\n[01:59.74]I don\'t belong here\r\n[02:15.33]I don\'t belong here\r\n[02:30.32]I don\'t belong here\r\n[02:34.62]But I\'m a creep, I\'m a weirdo\r\n[02:41.54]What the hell am I doing here?\r\n[02:45.63]I don\'t belong here'
+			},
+			{
+				name: "On My Own",
+				artist: 'Ashes Remain',
+				url: 'http://music.163.com/song/media/outer/url?id=16483438.mp3',
+				cover: 'http://p2.music.126.net/u4uhhO8c9vJirQZLv4Y0rw==/109951163370757964.jpg?param=130y130',
+				lrc: '[00:22.180]There\'s gotta be another way out\n[00:24.980]I\'ve been stuck in a cage with my doubt\n[00:27.730]I\'ve tried forever getting out on my own.\n[00:32.000]\n[00:33.520]But every time I do this my way\n[00:35.870]I get caught in the lies of the enemy\n[00:38.640]I lay my troubles down I\'m ready for you now.\n[00:42.590]\n[00:43.110]Bring me out\n[00:44.690]Come and find me in the dark now\n[00:46.920]Everyday by myself I\'m breaking down\n[00:50.120]I don\'t wanna fight alone anymore\n[00:53.980]Bring me out\n[00:55.650]From the prison of my own pride\n[00:57.880]My God, I need a hope I can\'t deny\n[01:00.620]In the end I\'m realizing\n[01:03.200]I was never meant to fight on my own\n[01:06.210]\n[01:11.290]Every little thing that I\'ve known\n[01:14.260]is every thing I need to let go\n[01:16.860]You\'re so much bigger than the world I\'ve made\n[01:20.970]\n[01:22.170]So I surrender my soul\n[01:24.980]I\'m reaching out for your hope\n[01:27.760]I lay my weapons down\n[01:29.960]I\'m ready for you now.\n[01:31.680]\n[01:32.200]Bring me out\n[01:33.930]Come and find me in the dark now\n[01:36.080]Everyday by myself I\'m breaking down\n[01:39.240]I don\'t wanna fight alone anymore\n[01:43.150]Bring me out\n[01:44.710]From the prison of my own pride\n[01:46.960]My God, I need a hope I can\'t deny\n[01:49.750]In the end I\'m realizing\n[01:52.360]I was never meant to fight on my own\n[01:55.200]\n[02:05.930]I don\'t wanna be incomplete\n[02:08.590]I remember what you said to me\n[02:11.350]I don\'t have to fight alone\n[02:14.470]\n[02:15.730]Bring me out\n[02:17.620]Come and find me in the dark now\n[02:19.540]Everyday by myself I\'m breaking down\n[02:22.890]I don\'t wanna fight alone anymore\n[02:26.650]Bring me out\n[02:28.430]From the prison of my own pride\n[02:30.590]My God, I need a hope I can\'t deny\n[02:33.430]In the end I\'m realizing\n[02:35.900]I was never meant to fight on my own\n[02:38.950]Oh oh, Oh oh, Oh oh, Oh oh\n[02:44.400]Oh oh, Oh oh, Oh oh, Oh oh\n[02:49.900]'
+			},
+			{
+				name: "Apologize",
+				artist: 'OneRepublic',
+				url: 'http://music.163.com/song/media/outer/url?id=24953439.mp3',
+				cover: 'http://p1.music.126.net/MzxX8rQNnCxKfVO_yS8_Kg==/909296116199925.jpg?param=130y130',
+				lrc: '[00:32.209]I\'m holding on your rope,\n[00:35.039]Got me ten feet off the ground\n[00:41.159]I\'m hearin what you say but I just can\'t make a sound\n[00:49.269]You tell me that you need me\n[00:51.789]Then you go and cut me down, but wait\n[00:57.659]You tell me that you\'re sorry\n[00:59.939]Didn\'t think I\'d turn around, and say \n[01:05.739]It\'s too late to apologize, it\'s too late\n[01:14.589]I said it\'s too late to apologize, it\'s too late\n[01:30.449]I\'d take another chance, take a fall\n[01:34.149]Take a shot for you\n[01:39.379]And I need you like a heart needs a beat\n[01:41.988]But it\'s nothin new\n[01:47.119]I loved you with a fire red \n[01:50.428]Now it\'s turning blue, and you say \n[01:55.419]\"Sorry\" like the angel heaven let me think was you\n[02:00.869]But I\'m afraid \n[02:03.639]It\'s too late to apologize, it\'s too late\n[02:11.500]I said it\'s too late to apologize, it\'s too late\n[02:37.370]It\'s too late to apologize, it\'s too late\n[02:46.050]I said it\'s too late to apologize, it\'s too late\n[02:54.070]It\'s too late to apologize, yeah\n[03:02.470]I said it\'s too late to apologize, yeah \n[03:11.040]I\'m holdin on your rope, got me ten feet off the ground'
+			},
+			{
+				name: "BOOM",
+				artist: 'Tiësto,Sevenn',
+				url: 'http://music.163.com/song/media/outer/url?id=474581010.mp3',
+				cover: 'http://p2.music.126.net/9Ciy8nTq4snpxdRiFC7gJQ==/17975915602766625.jpg?param=130y130',
+				lrc: '[00:17.73]Bring that ass back like a boom boom boom boom\n[00:19.58]Boom boom boom boom boom boom boom boom……\n[00:43.05]Never give a **********\n[00:44.88]Boom boom boom boom boom boom boom\n[01:19.83]Bring that ass back like a boom boom boom boom\n[01:22.00]Boom boom boom boom……\n[01:41.05]Bring that ass back like a boom boom boom boom\n[01:43.42]Boom boom boom boom boom boom boom boom……\n[02:06.83]Never give a **********\n[02:09.02]Boom boom boom boom boom boom boom boom……'
 			},
 			{
 				name: "Revenge (Minecraft Song)",
