@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Sir-kay</title>
+  <title>Sir_Kay</title>
   
-  <subtitle>Think Once, Debug More. Think More, Debug Once.</subtitle>
+  <subtitle>Kaysman Official Website</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -10,7 +10,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>Sir-kay</name>
+    <name>Sir_Kay</name>
     
   </author>
   

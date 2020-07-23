@@ -1,3 +1,4 @@
+/*
 // music: http://music.163.com/song/media/outer/url?id=%id%.mp3
 // lyric: http://music.163.com/api/song/media?id=%id%
 const ap = new APlayer({
@@ -337,3 +338,4 @@ const ap = new APlayer({
 			}
 		]
 });
+*/
